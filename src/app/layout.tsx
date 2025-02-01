@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/Header";
+import Head from "next/head"; // Импортируем Head
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -15,16 +17,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         <Header className="min-h-[4rem] md:min-h-[5rem] flex items-center" />
-        <main className="pt-[4rem] md:pt-[5rem] max-w-[60%] mx-auto">
-          {children}
-        </main>
+        <main>{children}</main>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

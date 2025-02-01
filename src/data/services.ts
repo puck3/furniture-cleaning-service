@@ -5,6 +5,10 @@ export const services = [
     drying_time: "4-8 часов",
     price: "от 2500р",
     image_src: "/services/sofa.webp",
+    formFields: [
+      { label: "Материал" },
+      { label: "Количество посадочных мест" },
+    ],
   },
   {
     title: "Химчистка кресел",
@@ -12,6 +16,7 @@ export const services = [
     drying_time: "3-5 часов",
     price: "от 1500р",
     image_src: "/services/sofa.webp",
+    formFields: [{ label: "Материал" }, { label: "Количество кресел" }],
   },
   {
     title: "Химчистка стульев",
@@ -19,6 +24,7 @@ export const services = [
     drying_time: "1-3 часа",
     price: "от 600р",
     image_src: "/services/sofa.webp",
+    formFields: [{ label: "Материал" }, { label: "Количество стульев" }],
   },
   {
     title: "Химчистка ковров",
@@ -26,6 +32,7 @@ export const services = [
     drying_time: "3-8 часов",
     price: "от 200р м2",
     image_src: "/services/sofa.webp",
+    formFields: [{ label: "Материал" }, { label: "Размер ковра" }],
   },
   {
     title: "Химчистка штор",
@@ -33,6 +40,7 @@ export const services = [
     drying_time: "1-6 часов",
     price: "от 500р м2",
     image_src: "/services/sofa.webp",
+    formFields: [{ label: "Материал" }, { label: "Размер штор" }],
   },
   {
     title: "Химчистка матрасов",
@@ -40,5 +48,6 @@ export const services = [
     drying_time: "4-6 часов",
     price: "от 1500р",
     image_src: "/services/sofa.webp",
+    formFields: [],
   },
 ];

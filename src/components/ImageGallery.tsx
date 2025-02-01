@@ -48,10 +48,7 @@ const ImageGallery = () => {
   }, [handleScroll]);
 
   return (
-    <div
-      className="absolute left-0 right-0 w-screen overflow-hidden"
-      id="gallery"
-    >
+    <div className="relative w-screen overflow-hidden">
       <div
         ref={galleryRef}
         className="flex overflow-x-auto snap-x snap-mandatory pb-8 gap-8 scrollbar-hide"
