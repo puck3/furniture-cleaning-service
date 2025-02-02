@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/images/icons/favicon.png" />
       </head>
       <body className={`${inter.variable} antialiased`}>
         <Header className="min-h-[4rem] md:min-h-[5rem] flex items-center" />

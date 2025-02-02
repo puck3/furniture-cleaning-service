@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ServiceCard from "@/components/ServiceCard";
-import ServiceForm from "@/components/ServiceForm";
+import ServiceForm from "@/components/Form/ServiceForm";
 import { services } from "@/data/services";
 
 const ServicesList = () => {
@@ -26,8 +26,7 @@ const ServicesList = () => {
 
       {selectedService && (
         <ServiceForm
-          formLabels={selectedService.formLabels}
-          serviceTitle={selectedService.title}
+          serviceFields={selectedService.formFields}
           onClose={closeForm}
           onSubmit={async (formData) => {
             console.log("Отправка данных:", formData);

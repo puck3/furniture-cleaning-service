@@ -1,12 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Nav from "./Nav";
+import { formatPhoneNumberIntl } from "react-phone-number-input";
 
 interface HeaderProps {
   className?: string;
 }
 
-const phoneNumber = "+12345678901"; // Замените на актуальный номер
+const phoneNumber = "+79966309098"; // Замените на актуальный номер
+const formattedPhoneNumber = formatPhoneNumberIntl(phoneNumber);
 
 const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   return (
@@ -15,7 +19,12 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
     >
       <div className="w-full flex items-center justify-content ">
         <div className="flex items-center space-x-2">
-          <Image src="/logo.png" alt="На главную" width={40} height={40} />
+          <Image
+            src="/images/icons/logo.png"
+            alt="На главную"
+            width={40}
+            height={40}
+          />
           <span className="text-white text-xl font-semibold">Fresh Wave</span>
         </div>
         <Nav />
@@ -24,16 +33,16 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
             href={`tel:{phoneNumber}`}
             className="text-white text-lg font-semibold hover:text-gray-300 transition-colors"
           >
-            +1(234)567-89-01
+            {formattedPhoneNumber}
           </a>
           <a
-            href={`https://t.me/yourusername`}
+            href={`https://t.me/${phoneNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Telegram"
           >
             <Image
-              src="/telegram.svg"
+              src="/images/icons/telegram.svg"
               alt="Telegram"
               width={30}
               height={30}
@@ -47,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
             aria-label="WhatsApp"
           >
             <Image
-              src="/whatsapp.svg"
+              src="/images/icons/whatsapp.svg"
               alt="WhatsApp"
               width={30}
               height={30}

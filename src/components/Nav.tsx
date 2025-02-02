@@ -10,13 +10,10 @@ const Nav = () => {
             <a href="#gallery">Наши работы</a>
           </li>
           <li className="hover:text-gray-300 transition-colors">
-            <a href="#order">Оставить заявку</a>
+            <a href="#contacts">Контакты</a>
           </li>
           <li className="hover:text-gray-300 transition-colors">
             <a href="#questions">Вопросы</a>
-          </li>
-          <li className="hover:text-gray-300 transition-colors">
-            <a href="#contacts">Контакты</a>
           </li>
         </ul>
       </nav>
