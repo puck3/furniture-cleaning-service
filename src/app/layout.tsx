@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Химчистка мебели",
+  title: "Fresh Wave: Химчистка мебели",
   description: "Услуги выездной химчистки диванов и мягкой мебели в КМВ",
 };
 

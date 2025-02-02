@@ -1,33 +1,68 @@
 "use client";
 
-import { useState } from "react";
-
-interface FormField {
-  label: string;
-}
+import { useState, useEffect } from "react";
+import FormField from "./FormField";
+import FormButtons from "./FormButtons";
 
 interface ServiceFormProps {
-  formFields: FormField[];
+  formLabels: string[];
   serviceTitle: string;
   onClose: () => void;
   onSubmit: (formData: Record<string, string>) => void;
 }
 
 const ServiceForm: React.FC<ServiceFormProps> = ({
-  formFields,
+  formLabels,
   serviceTitle,
   onClose,
   onSubmit,
 }) => {
   const [formData, setFormData] = useState<Record<string, string>>({});
+  const [isValid, setIsValid] = useState(false);
+
+  const requiredFields: {
+    label: string;
+    required: boolean;
+    type: "text" | "tel";
+  }[] = [
+    { label: "Имя", required: true, type: "text" },
+    { label: "Номер телефона", required: true, type: "tel" },
+    { label: "Адрес", required: true, type: "text" },
+  ];
+
+  const allFields: {
+    label: string;
+    required: boolean;
+    type: "text" | "tel";
+  }[] = [
+    ...requiredFields,
+    ...formLabels.map((label) => ({
+      label,
+      required: false,
+      type: "text" as const,
+    })),
+    { label: "Комментарий к заявке", required: false, type: "text" as const },
+  ];
 
   const handleChange = (label: string, value: string) => {
     setFormData((prev) => ({ ...prev, [label]: value }));
   };
 
+  useEffect(() => {
+    const allRequiredFilled = requiredFields.every((field) =>
+      formData[field.label]?.trim()
+    );
+
+    const phoneValid = /^\+?\d{10,15}$/.test(formData["Номер телефона"] || ""); // Проверка номера
+
+    setIsValid(allRequiredFilled && phoneValid);
+  }, [formData]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ Услуга: serviceTitle, ...formData });
+    if (isValid) {
+      onSubmit({ Услуга: serviceTitle, ...formData });
+    }
   };
 
   return (
@@ -41,73 +76,18 @@ const ServiceForm: React.FC<ServiceFormProps> = ({
         </button>
         <h2 className="text-xl font-semibold mb-4">Оставить заявку</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div key="name">
-            <label className="block text-gray-700">Ваше имя</label>
-            <input
-              type="text"
-              value={formData["name"] || ""}
-              onChange={(e) => handleChange("name", e.target.value)}
-              className="w-full border p-2 rounded-md"
-              required
+          {allFields.map(({ label, required, type }) => (
+            <FormField
+              key={label}
+              label={label}
+              required={required}
+              type={type}
+              value={formData[label] || ""}
+              handleChange={handleChange}
             />
-          </div>
-          <div key="phone">
-            <label className="block text-gray-700">Ваш номер телефона</label>
-            <input
-              type="text"
-              value={formData["phone"] || ""}
-              onChange={(e) => handleChange("phone", e.target.value)}
-              className="w-full border p-2 rounded-md"
-              required
-            />
-          </div>
-          <div key="address">
-            <label className="block text-gray-700">Ваш адрес</label>
-            <input
-              type="text"
-              value={formData["address"] || ""}
-              onChange={(e) => handleChange("address", e.target.value)}
-              className="w-full border p-2 rounded-md"
-              required
-            />
-          </div>
-          {formFields.map((field) => (
-            <div key={field.label}>
-              <label className="block text-gray-700">{field.label}</label>
-              <input
-                type="text"
-                value={formData[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
-                className="w-full border p-2 rounded-md"
-                required
-              />
-            </div>
           ))}
-          <div key="comment">
-            <label className="block text-gray-700">Комментарий к заявке</label>
-            <input
-              type="text"
-              value={formData["comment"] || ""}
-              onChange={(e) => handleChange("comment", e.target.value)}
-              className="w-full border p-2 rounded-md"
-            />
-          </div>
 
-          <div className="flex justify-end space-x-2">
-            <button
-              type="button"
-              onClick={onClose}
-              className="bg-gray-300 px-4 py-2 rounded-md"
-            >
-              Закрыть
-            </button>
-            <button
-              type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-md"
-            >
-              Отправить
-            </button>
-          </div>
+          <FormButtons onClose={onClose} isDisabled={!isValid} />
         </form>
       </div>
     </div>

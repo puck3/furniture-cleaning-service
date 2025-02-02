@@ -4,8 +4,8 @@ import ServicesList from "@/components/ServicesList";
 export default function Home() {
   return (
     <main>
-      <h1 className="pt-[4rem] md:pt-[5rem] max-w-[60%] mx-auto text-4xl md:text-5xl font-extrabold text-center text-gray-900 dark:text-white mt-8 mb-12">
-        Химчистка мебели
+      <h1 className="pt-[4rem] md:pt-[5rem] max-w-[60%] mx-auto text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mt-8 mb-12">
+        Профессиональная химчистка диванов и мягкой мебели
       </h1>
 
       <section

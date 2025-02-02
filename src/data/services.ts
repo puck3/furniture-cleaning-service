@@ -5,10 +5,7 @@ export const services = [
     drying_time: "4-8 часов",
     price: "от 2500р",
     image_src: "/services/sofa.webp",
-    formFields: [
-      { label: "Материал" },
-      { label: "Количество посадочных мест" },
-    ],
+    formLabels: ["Материал", "Общее количество посадочных мест"],
   },
   {
     title: "Химчистка кресел",
@@ -16,7 +13,7 @@ export const services = [
     drying_time: "3-5 часов",
     price: "от 1500р",
     image_src: "/services/sofa.webp",
-    formFields: [{ label: "Материал" }, { label: "Количество кресел" }],
+    formLabels: ["Материал", "Количество кресел"],
   },
   {
     title: "Химчистка стульев",
@@ -24,7 +21,7 @@ export const services = [
     drying_time: "1-3 часа",
     price: "от 600р",
     image_src: "/services/sofa.webp",
-    formFields: [{ label: "Материал" }, { label: "Количество стульев" }],
+    formLabels: ["Материал", "Количество стульев"],
   },
   {
     title: "Химчистка ковров",
@@ -32,15 +29,7 @@ export const services = [
     drying_time: "3-8 часов",
     price: "от 200р м2",
     image_src: "/services/sofa.webp",
-    formFields: [{ label: "Материал" }, { label: "Размер ковра" }],
-  },
-  {
-    title: "Химчистка штор",
-    cleaning_time: "40-90 мин.",
-    drying_time: "1-6 часов",
-    price: "от 500р м2",
-    image_src: "/services/sofa.webp",
-    formFields: [{ label: "Материал" }, { label: "Размер штор" }],
+    formLabels: ["Материал", "Размер ковра"],
   },
   {
     title: "Химчистка матрасов",
@@ -48,6 +37,30 @@ export const services = [
     drying_time: "4-6 часов",
     price: "от 1500р",
     image_src: "/services/sofa.webp",
-    formFields: [],
+    formLabels: ["Количество матрасов"],
+  },
+  {
+    title: "Химчистка подушек и мягких игрушек",
+    cleaning_time: "10-20 мин.",
+    drying_time: "1-2 часа",
+    price: "от 200р",
+    image_src: "/services/sofa.webp",
+    formLabels: ["Материал", "Количество"],
+  },
+  {
+    title: "Химчистка бильярдных столов",
+    cleaning_time: "30-60 мин.",
+    drying_time: "2-4 часов",
+    price: "от 1000р",
+    image_src: "/services/sofa.webp",
+    formLabels: ["Количество столов"],
+  },
+  {
+    title: "Химчистка автомобилей",
+    cleaning_time: "60-90 мин.",
+    drying_time: "3-5 часов",
+    price: "от 3000р",
+    image_src: "/services/sofa.webp",
+    formLabels: ["Материал", "Количество автомобилей"],
   },
 ];

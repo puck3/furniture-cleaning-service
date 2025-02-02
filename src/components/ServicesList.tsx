@@ -26,7 +26,7 @@ const ServicesList = () => {
 
       {selectedService && (
         <ServiceForm
-          formFields={selectedService.formFields}
+          formLabels={selectedService.formLabels}
           serviceTitle={selectedService.title}
           onClose={closeForm}
           onSubmit={async (formData) => {

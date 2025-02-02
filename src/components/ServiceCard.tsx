@@ -8,7 +8,7 @@ interface Service {
   drying_time: string;
   price: string;
   image_src: string;
-  formFields: { label: string }[];
+  formLabels: string[];
 }
 
 const ServiceCard: React.FC<{

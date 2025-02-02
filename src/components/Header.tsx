@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
       <div className="w-full flex items-center justify-content ">
         <div className="flex items-center space-x-2">
           <Image src="/logo.png" alt="На главную" width={40} height={40} />
-          <span className="text-white text-xl font-semibold">Cleaning</span>
+          <span className="text-white text-xl font-semibold">Fresh Wave</span>
         </div>
         <Nav />
         <div className="flex space-x-4">
