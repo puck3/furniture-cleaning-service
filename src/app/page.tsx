@@ -1,5 +1,7 @@
-import ImageGallery from "@/components/ImageGallery";
-import ServicesList from "@/components/ServicesList";
+"use client";
+
+import ImageGallery from "@/components/ImageGallery/ImageGallery";
+import ServicesList from "@/components/Services/ServicesList";
 
 export default function Home() {
   return (

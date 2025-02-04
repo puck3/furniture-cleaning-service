@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ServiceCard from "@/components/ServiceCard";
+import ServiceCard from "@/components/Services/ServiceCard";
 import ServiceForm from "@/components/Form/ServiceForm";
 import { services } from "@/data/services";
 
