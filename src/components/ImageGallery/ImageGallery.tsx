@@ -41,7 +41,7 @@ const ImageGallery = () => {
   };
 
   return (
-    <div className="relative w-screen overflow-hidden">
+    <div className="relative w-[100vw] -ml-[calc(50vw-50%)]">
       <div
         ref={galleryRef}
         className="flex overflow-x-auto snap-x snap-mandatory pb-8 gap-8 scrollbar-hide"

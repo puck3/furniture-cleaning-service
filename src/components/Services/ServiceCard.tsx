@@ -16,7 +16,7 @@ const ServiceCard: React.FC<{
   onOpenForm: (service: Service) => void;
 }> = ({ service, onOpenForm }) => {
   return (
-    <div className="border p-4 rounded-lg shadow-md max-w-xs md:max-w-sm lg:max-w-md mx-auto">
+    <div className="border p-4 rounded-lg shadow-md max-w-xs md:max-w-sm lg:max-w-md mx-auto flex flex-col h-full">
       <Image
         src={service.image_src}
         alt={service.title}
@@ -26,23 +26,40 @@ const ServiceCard: React.FC<{
         layout="intrinsic"
         priority
       />
-      <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-      <ul className="mb-4">
-        <li>
-          Стоимость: <strong className="font-bold">{service.price}</strong>
-        </li>
-        <li>
-          Время чистки:{" "}
+
+      <h3 className="text-xl font-semibold text-center">{service.title}</h3>
+
+      <div className="flex-grow"></div>
+
+      <div className="grid grid-cols-2 gap-4 mb-4 mt-1">
+        <div className="flex flex-col items-center">
+          <Image
+            src="/images/services/coin.svg"
+            alt="coin"
+            width={800}
+            height={800}
+            className="w-8 h-8"
+          />
+          <span className="text-sm text-gray-600 mt-1">Стоимость</span>
+          <strong className="font-bold">{service.price}</strong>
+        </div>
+
+        <div className="flex flex-col items-center">
+          <Image
+            src="/images/services/time.svg"
+            alt="clock"
+            width={800}
+            height={800}
+            className="w-8 h-8"
+          />
+          <span className="text-sm text-gray-600 mt-1">Время чистки</span>
           <strong className="font-bold">{service.cleaning_time}</strong>
-        </li>
-        <li>
-          Высыхание:{" "}
-          <strong className="font-bold">{service.drying_time}</strong>
-        </li>
-      </ul>
+        </div>
+      </div>
+
       <button
         onClick={() => onOpenForm(service)}
-        className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+        className="mt-auto w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
       >
         Оставить заявку
       </button>

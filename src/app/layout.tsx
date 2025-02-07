@@ -24,8 +24,10 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/images/icons/favicon.png" />
       </head>
       <body className={`${inter.variable} antialiased`}>
-        <Header className="min-h-[4rem] md:min-h-[5rem] flex items-center" />
-        <main>{children}</main>
+        <Header />
+        <main className="max-w-[95%] sm:max-w-[85%] lg:max-w-[75%] mx-auto">
+          {children}
+        </main>
         <footer>
           <Footer />
         </footer>
