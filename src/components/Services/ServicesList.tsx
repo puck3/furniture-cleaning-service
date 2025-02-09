@@ -5,6 +5,20 @@ import ServiceCard from "@/components/Services/ServiceCard";
 import ServiceForm from "@/components/Form/ServiceForm";
 import { services } from "@/data/services";
 
+const submitForm = async (formData: Record<string, string>) => {
+  console.log("Отправка данных:", formData);
+  try {
+    await fetch("/api/send-telegram", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    alert("Заявка успешно отправлена!");
+  } catch (error) {
+    alert("Ошибка при отправке заявки.");
+  }
+};
+
 const ServicesList = () => {
   const [selectedService, setSelectedService] = useState<
     null | (typeof services)[0]
@@ -29,17 +43,7 @@ const ServicesList = () => {
           serviceFields={selectedService.formFields}
           onClose={closeForm}
           onSubmit={async (formData) => {
-            console.log("Отправка данных:", formData);
-            try {
-              await fetch("/api/send-telegram", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-              });
-              alert("Заявка успешно отправлена!");
-            } catch (error) {
-              alert("Ошибка при отправке заявки.");
-            }
+            await submitForm(formData);
             closeForm();
           }}
         />

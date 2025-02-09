@@ -13,18 +13,14 @@ const FormButtons: React.FC<Actions> = ({ onClose, isDisabled = false }) => {
       <button
         type="button"
         onClick={onClose}
-        className="bg-gray-300 px-4 py-2 rounded-md"
+        className="bg-gray-200 hover:bg-gray-400 px-4 py-2 rounded-md"
       >
         Закрыть
       </button>
       <button
         type="submit"
         disabled={isDisabled}
-        className={`px-4 py-2 rounded-md ${
-          isDisabled
-            ? "bg-gray-400 cursor-not-allowed"
-            : "bg-blue-500 text-white"
-        }`}
+        className="px-4 py-2 rounded-md bg-fuchsia-600 hover:bg-fuchsia-800 text-white"
       >
         Отправить
       </button>

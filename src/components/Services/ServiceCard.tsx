@@ -16,17 +16,20 @@ const ServiceCard: React.FC<{
   onOpenForm: (service: Service) => void;
 }> = ({ service, onOpenForm }) => {
   return (
-    <div className="border p-4 rounded-lg shadow-md max-w-xs md:max-w-sm lg:max-w-md mx-auto flex flex-col h-full">
+    <div className="border p-[1rem] rounded-lg shadow-md max-w-sm md:max-w-md lg:max-w-lg mx-auto flex flex-col h-full">
       <Image
         src={service.image_src}
         alt={service.title}
         width={400}
         height={300}
-        className="w-full rounded-t-lg mb-4"
+        className="w-full rounded-t-lg"
       />
+      <h3 className="font-semibold text-center text-lg lg:text-xl">
+        {service.title}
+      </h3>
       <div className="flex-grow"></div>
-      <div className="grid grid-cols-2 gap-4 mb-4 mt-1">
-        <div className="flex flex-col items-center">
+      <div className="grid grid-cols-2 gap-4 my-[1rem]">
+        <div className="flex flex-col items-center bg-gray-200 rounded-lg py-2">
           <Image
             src="/images/services/coin.svg"
             alt="coin"
@@ -38,7 +41,7 @@ const ServiceCard: React.FC<{
           <strong className="font-bold">{service.price}</strong>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center bg-gray-200 rounded-lg py-2">
           <Image
             src="/images/services/time.svg"
             alt="clock"
@@ -53,7 +56,7 @@ const ServiceCard: React.FC<{
 
       <button
         onClick={() => onOpenForm(service)}
-        className="mt-auto w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+        className="mt-auto w-full bg-fuchsia-600 text-white py-2 px-4 rounded hover:bg-fuchsia-800 transition-colors"
       >
         Оставить заявку
       </button>

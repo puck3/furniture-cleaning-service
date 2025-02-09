@@ -25,7 +25,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} antialiased`}>
         <Header />
-        <main className="max-w-[95%] sm:max-w-[85%] lg:max-w-[75%] mx-auto">
+        <main className="mt-[6rem] max-w-[95%] sm:max-w-[85%] lg:max-w-[75%] mx-auto">
           {children}
         </main>
         <footer>
