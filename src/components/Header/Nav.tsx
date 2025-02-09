@@ -1,21 +1,35 @@
 "use client";
 
-const Nav = () => {
+interface NavProps {
+  className?: string;
+  listClassName?: string;
+  linkClassName?: string;
+  items?: { href: string; label: string }[];
+}
+
+const Nav: React.FC<NavProps> = ({
+  className = "",
+  listClassName = "",
+  linkClassName = "",
+  items = [
+    { href: "#services", label: "Услуги и цены" },
+    { href: "#gallery", label: "Наши работы" },
+    { href: "#questions", label: "Вопросы" },
+    { href: "#contacts", label: "Контакты" },
+  ],
+}) => {
   return (
-    <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-lg font-medium text-gray-800 md:text-white">
-      <li className="hover:text-blue-600 md:hover:text-gray-300 transition-colors">
-        <a href="#services">Услуги и цены</a>
-      </li>
-      <li className="hover:text-blue-600 md:hover:text-gray-300 transition-colors">
-        <a href="#gallery">Наши работы</a>
-      </li>
-      <li className="hover:text-blue-600 md:hover:text-gray-300 transition-colors">
-        <a href="#questions">Вопросы</a>
-      </li>
-      <li className="hover:text-blue-600 md:hover:text-gray-300 transition-colors">
-        <a href="#contacts">Контакты</a>
-      </li>
-    </ul>
+    <nav className={className}>
+      <ul className={listClassName}>
+        {items.map(({ href, label }) => (
+          <li key={href}>
+            <a href={href} className={linkClassName}>
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

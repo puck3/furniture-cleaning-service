@@ -23,14 +23,8 @@ const ServiceCard: React.FC<{
         width={400}
         height={300}
         className="w-full rounded-t-lg mb-4"
-        layout="intrinsic"
-        priority
       />
-
-      <h3 className="text-xl font-semibold text-center">{service.title}</h3>
-
       <div className="flex-grow"></div>
-
       <div className="grid grid-cols-2 gap-4 mb-4 mt-1">
         <div className="flex flex-col items-center">
           <Image

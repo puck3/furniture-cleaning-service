@@ -10,11 +10,11 @@ const Logo = () => {
         alt="На главную"
         width={40}
         height={40}
+        className="w-17"
       />
-      {/* Прячем текст на маленьких экранах */}
-      <span className="text-white text-xl font-semibold hidden lg:inline">
+      <em className="text-white text-2xl font-semibold hidden md:inline">
         Fresh Wave
-      </span>
+      </em>
     </a>
   );
 };
