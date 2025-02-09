@@ -1,12 +1,16 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import ExampleImage from "./ExampleImage";
+import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Image from "next/image";
+import "./ImageGallery.css";
 
 const ImageGallery = () => {
   const [images, setImages] = useState<string[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const galleryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetch("/api/images")
@@ -15,59 +19,28 @@ const ImageGallery = () => {
       .catch(console.error);
   }, []);
 
-  useEffect(() => {
-    if (!galleryRef.current) return;
-
-    const gallery = galleryRef.current;
-
-    const handleScroll = () => {
-      const containerWidth = gallery.offsetWidth;
-      const newIndex = Math.round(gallery.scrollLeft / (containerWidth * 0.6));
-      setCurrentIndex(newIndex);
-    };
-
-    gallery.addEventListener("scroll", handleScroll);
-    return () => gallery.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToIndex = (index: number) => {
-    if (!galleryRef.current) return;
-
-    const containerWidth = galleryRef.current.offsetWidth;
-    const scrollPosition = containerWidth * 0.6 * index;
-
-    galleryRef.current.scrollTo({ left: scrollPosition, behavior: "smooth" });
-    setCurrentIndex(index);
-  };
-
   return (
-    <div className="relative w-[100vw] -ml-[calc(50vw-50%)]">
-      <div
-        ref={galleryRef}
-        className="flex overflow-x-auto snap-x snap-mandatory pb-8 gap-8 scrollbar-hide"
-        onScroll={() => {
-          if (!galleryRef.current) return;
-          const containerWidth = galleryRef.current.offsetWidth;
-          setCurrentIndex(
-            Math.round(galleryRef.current.scrollLeft / (containerWidth * 0.6))
-          );
-        }}
+    <div className="relative w-full">
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        modules={[Navigation, Pagination]}
+        className="custom-swiper"
       >
         {images.map((src, index) => (
-          <ExampleImage
-            key={src}
-            src={src}
-            alt={`Фото ${index + 1}`}
-            onClick={() => scrollToIndex(index)}
-            style={{
-              width: "60%",
-              marginLeft: index === 0 ? "20%" : "0",
-              marginRight: index === images.length - 1 ? "20%" : "0",
-              transform: `scale(${index === currentIndex ? 1 : 0.9})`,
-            }}
-          />
+          <SwiperSlide key={index}>
+            <Image
+              src={src}
+              alt={`Image ${index + 1}`}
+              className="w-full rounded-lg"
+              width={1920}
+              height={1080}
+            />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };
