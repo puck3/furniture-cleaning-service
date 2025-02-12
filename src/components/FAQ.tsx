@@ -40,7 +40,7 @@ const FAQ = () => {
         <div key={index} className="border-b border-gray-300">
           <button
             onClick={() => toggleFAQ(index)}
-            className="w-full flex justify-between items-center py-3 text-left text-lg font-semibold text-gray-900 hover:text-gray-700 transition-colors"
+            className="w-full flex justify-between items-center py-3 text-left text-lg font-semibold hover:text-fuchsia-600 transition-colors"
           >
             {item.question}
             <span className="text-gray-600 text-xl">

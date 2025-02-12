@@ -6,29 +6,23 @@ import SocialsIcon from "./SocialsIcon";
 
 const Contacts = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 max-w-2xl mx-auto mb-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {/* <div className="flex flex-col items-center text-center"> */}
       <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-1">
-          Контактный номер:
-        </h3>
+        <h3 className="text-lg font-semibold mb-1">Контактный номер:</h3>
         <PhoneLink
           phoneNumber={PHONE_NUMBER}
-          className="text-gray-700 text-lg font-medium hover:text-gray-400 transition-colors"
+          className="text-gray-700 text-lg font-medium"
         />
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-1">
-          Время работы:
-        </h3>
+        <h3 className="text-lg font-semibold mb-1">Время работы:</h3>
         <p className="text-gray-700 text-lg">С 10:00 до 20:00</p>
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-1">
-          Мессенджеры:
-        </h3>
+        <h3 className="text-lg font-semibold mb-1">Мессенджеры:</h3>
         <div className="flex items-center gap-4">
           <SocialsIcon
             src="/images/icons/telegram_black.svg"
@@ -46,9 +40,7 @@ const Contacts = () => {
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold text-gray-800 mb-1">
-          Мы в соц сетях:
-        </h3>
+        <h3 className="text-lg font-semibold mb-1">Мы в соц сетях:</h3>
         <div className="flex items-center gap-4">
           <SocialsIcon
             src="/images/icons/telegram_black.svg"

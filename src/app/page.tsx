@@ -13,28 +13,28 @@ export default function Home() {
       </h1> */}
 
       <section id="services" className="my-[2rem] scroll-mt-[5rem]">
-        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
           Наши услуги
         </h2>
         <ServicesList />
       </section>
 
       <section id="gallery" className="my-[2rem] scroll-mt-[5rem]">
-        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
           Примеры наших работ
         </h2>
         <ImageGallery />
       </section>
 
       <section id="questions" className="my-[2rem] scroll-mt-[5rem]">
-        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
           Частые вопросы
         </h2>
         <FAQ />
       </section>
 
       <section id="contacts" className="my-[2rem] scroll-mt-[5rem]">
-        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
           Связаться со специалистом
         </h2>
         <Contacts />

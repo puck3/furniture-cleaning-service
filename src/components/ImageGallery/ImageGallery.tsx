@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
-import "./ImageGallery.css";
+import "@/styles/ImageGallery.css";
 
 const ImageGallery = () => {
   const [images, setImages] = useState<string[]>([]);

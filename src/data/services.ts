@@ -4,7 +4,7 @@ export const services = [
     cleaning_time: "20-90 мин.",
     drying_time: "4-8 часов",
     price: "от 2500р",
-    image_src: "/images/services/sofa.webp",
+    image_src: "/images/services/cards/sofa.png",
     formFields: ["Материал", "Общее количество посадочных мест"],
   },
   {
@@ -12,7 +12,7 @@ export const services = [
     cleaning_time: "25-45 мин.",
     drying_time: "3-5 часов",
     price: "от 1500р",
-    image_src: "/images/services/sofa.webp",
+    image_src: "/images/services/cards/armchair.png",
     formFields: ["Материал", "Количество кресел"],
   },
   {
@@ -20,7 +20,7 @@ export const services = [
     cleaning_time: "15-35 мин.",
     drying_time: "1-3 часа",
     price: "от 600р",
-    image_src: "/images/services/sofa.webp",
+    image_src: "/images/services/cards/chair.png",
     formFields: ["Материал", "Количество стульев"],
   },
   {
@@ -28,7 +28,7 @@ export const services = [
     cleaning_time: "55-90 мин.",
     drying_time: "3-8 часов",
     price: "от 200р м2",
-    image_src: "/images/services/sofa.webp",
+    image_src: "/images/services/cards/carpet.png",
     formFields: ["Материал", "Размер ковра"],
   },
   {
@@ -36,7 +36,7 @@ export const services = [
     cleaning_time: "45-65 мин.",
     drying_time: "4-6 часов",
     price: "от 1500р",
-    image_src: "/images/services/sofa.webp",
+    image_src: "/images/services/cards/mattress.png",
     formFields: ["Количество матрасов"],
   },
   {
@@ -44,7 +44,7 @@ export const services = [
     cleaning_time: "10-20 мин.",
     drying_time: "1-2 часа",
     price: "от 200р",
-    image_src: "/images/services/sofa.webp",
+    image_src: "/images/services/cards/pillow.png",
     formFields: ["Материал", "Количество"],
   },
   {
@@ -52,7 +52,7 @@ export const services = [
     cleaning_time: "30-60 мин.",
     drying_time: "2-4 часов",
     price: "от 1000р",
-    image_src: "/images/services/sofa.webp",
+    image_src: "/images/services/cards/billiard-table.png",
     formFields: ["Количество столов"],
   },
   {
@@ -60,7 +60,7 @@ export const services = [
     cleaning_time: "60-90 мин.",
     drying_time: "3-5 часов",
     price: "от 3000р",
-    image_src: "/images/services/sofa.webp",
+    image_src: "/images/services/cards/car.png",
     formFields: ["Материал", "Количество автомобилей"],
   },
 ];
