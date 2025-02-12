@@ -29,13 +29,13 @@ const Header: React.FC = () => {
             className="text-white text-xl font-semibold"
           />
           <SocialsIcon
-            src="/images/icons/telegram_white.svg"
+            src="/icons/socials/telegram_white.svg"
             alt="Telegram"
             href={`https://t.me/${PHONE_NUMBER}`}
             className="w-7"
           />
           <SocialsIcon
-            src="/images/icons/whatsapp_white.svg"
+            src="/icons/socials/whatsapp_white.svg"
             alt="WhatsApp"
             href={`https://wa.me/${PHONE_NUMBER}`}
             className="w-7"
@@ -49,13 +49,13 @@ const Header: React.FC = () => {
             className="text-white text-2xl font-semibold"
           />
           <SocialsIcon
-            src="/images/icons/telegram_white.svg"
+            src="/icons/socials/telegram_white.svg"
             alt="Telegram"
             href={`https://t.me/${PHONE_NUMBER}`}
             className="w-7"
           />
           <SocialsIcon
-            src="/images/icons/whatsapp_white.svg"
+            src="/icons/socials/whatsapp_white.svg"
             alt="WhatsApp"
             href={`https://wa.me/${PHONE_NUMBER}`}
             className="w-7"
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           className="hidden md:flex lg:hidden p-2 text-white focus:outline-none"
           onClick={() => setIsSidebarOpen(true)}
         >
-          <img src="/images/icons/menu.svg" alt="Меню" className="w-7 h-7" />
+          <img src="/icons/menu.svg" alt="Меню" className="w-7 h-7" />
         </button>
 
         {/* sm */}
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
           className="md:hidden p-2 text-white focus:outline-none"
           onClick={() => setIsSidebarOpen(true)}
         >
-          <img src="/images/icons/menu.svg" alt="Меню" className="w-7 h-7" />
+          <img src="/icons/menu.svg" alt="Меню" className="w-7 h-7" />
         </button>
       </div>
 

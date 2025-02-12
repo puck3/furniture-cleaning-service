@@ -31,7 +31,7 @@ const ServiceCard: React.FC<{
       <div className="grid grid-cols-2 gap-4 my-[1rem]">
         <div className="flex flex-col items-center bg-gray-200 rounded-lg py-2">
           <Image
-            src="/images/services/coin.svg"
+            src="/icons/coin.svg"
             alt="coin"
             width={800}
             height={800}
@@ -43,7 +43,7 @@ const ServiceCard: React.FC<{
 
         <div className="flex flex-col items-center bg-gray-200 rounded-lg py-2">
           <Image
-            src="/images/services/time.svg"
+            src="/icons/time.svg"
             alt="clock"
             width={800}
             height={800}

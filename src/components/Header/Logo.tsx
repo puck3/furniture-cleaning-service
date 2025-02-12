@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <a className="flex items-center space-x-2" href="#top">
       <Image
-        src="/images/icons/logo.png"
+        src="/icons/logo.png"
         alt="На главную"
         width={40}
         height={40}

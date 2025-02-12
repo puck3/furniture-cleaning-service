@@ -25,13 +25,13 @@ const Contacts = () => {
         <h3 className="text-lg font-semibold mb-1">Мессенджеры:</h3>
         <div className="flex items-center gap-4">
           <SocialsIcon
-            src="/images/icons/telegram_black.svg"
+            src="/icons/socials/telegram_black.svg"
             alt="Telegram"
             href={`https://t.me/${PHONE_NUMBER}`}
             className="w-7"
           />
           <SocialsIcon
-            src="/images/icons/whatsapp_black.svg"
+            src="/icons/socials/whatsapp_black.svg"
             alt="WhatsApp"
             href={`https://wa.me/${PHONE_NUMBER}`}
             className="w-7"
@@ -43,7 +43,7 @@ const Contacts = () => {
         <h3 className="text-lg font-semibold mb-1">Мы в соц сетях:</h3>
         <div className="flex items-center gap-4">
           <SocialsIcon
-            src="/images/icons/telegram_black.svg"
+            src="/icons/socials/telegram_black.svg"
             alt="Telegram"
             href="https://t.me/FreshWave26"
             className="w-7"
