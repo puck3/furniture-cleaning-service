@@ -1,8 +1,8 @@
 "use client";
 
 import Contacts from "@/components/Contacts";
+import ExamplesGallery from "@/components/ExamplesGallery";
 import FAQ from "@/components/FAQ";
-import ImageGallery from "@/components/ImageGallery/ImageGallery";
 import ServicesList from "@/components/Services/ServicesList";
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
         <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
           Примеры наших работ
         </h2>
-        <ImageGallery />
+        <ExamplesGallery />
       </section>
 
       <section id="questions" className="my-[2rem] scroll-mt-[5rem]">
