@@ -1,23 +1,25 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Image from "next/image";
 import "@/styles/ImageGallery.css";
 
 const ImageGallery = () => {
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch("/api/images")
+    fetch("/examples/paths.json")
       .then((res) => res.json())
-      .then(setImages)
-      .catch(console.error);
+      .then(setImages);
   }, []);
+
+  const isLoopEnabled = images.length > 1;
 
   return (
     <div className="relative w-full">
@@ -26,8 +28,9 @@ const ImageGallery = () => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
+        loop={isLoopEnabled}
         modules={[Navigation, Pagination]}
-        className="custom-swiper"
+        className="fuchsia-swiper"
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
