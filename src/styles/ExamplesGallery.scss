@@ -1,0 +1,21 @@
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+.fuchsia-buttons {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #c026d3;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #f0abfc;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+
+    &-active {
+      background-color: #c026d3;
+      opacity: 1;
+    }
+  }
+}
