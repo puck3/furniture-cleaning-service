@@ -1,21 +1,42 @@
 "use client";
 
 import { useState } from "react";
+
 import ServiceCard from "@/components/Services/ServiceCard";
 import ServiceForm from "@/components/Form/ServiceForm";
 import { services } from "@/data/services";
 
-const submitForm = async (formData: Record<string, string>) => {
+const submitForm = async (
+  formData: Record<string, string>,
+  serviceTitle: string
+) => {
   console.log("Отправка данных:", formData);
+
+  const formattedMessage = Object.entries(formData)
+    .filter(([_, value]) => value && value.trim() !== "")
+    .map(([key, value]) => `${key}: ${value}`)
+    .join("\n");
+
+  const message = `Услуга: ${serviceTitle}\n${formattedMessage}`;
+
   try {
-    await fetch("/api/send-telegram", {
+    const response = await fetch("https://api.telegram.org/bot/sendMessage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        chat_id: "111111111",
+        text: message,
+      }),
     });
-    alert("Заявка успешно отправлена!");
+
+    if (response.ok) {
+      alert("Заявка успешно отправлена!");
+    } else {
+      throw new Error("Ошибка при отправке заявки.");
+    }
   } catch (error) {
     alert("Ошибка при отправке заявки.");
+    console.error(error);
   }
 };
 
@@ -43,7 +64,7 @@ const ServicesList = () => {
           serviceFields={selectedService.formFields}
           onClose={closeForm}
           onSubmit={async (formData) => {
-            await submitForm(formData);
+            await submitForm(formData, selectedService.title);
             closeForm();
           }}
         />
