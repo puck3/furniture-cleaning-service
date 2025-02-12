@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@/styles/globals.css";
-import Header from "@/components/Header/Header";
-import Head from "next/head"; // Импортируем Head
+import type { Metadata } from "next";
+
 import Footer from "@/components/Footer";
+import Header from "@/components/Header/Header";
+
+import "@/styles/globals.scss";
 
 const inter = Inter({
   variable: "--font-geist-sans",

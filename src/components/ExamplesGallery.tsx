@@ -8,7 +8,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "@/styles/ExamplesGallery.css";
+import "@/styles/ExamplesGallery.scss";
 
 const ExamplesGallery = () => {
   const [sources, setSources] = useState<string[]>([]);
@@ -29,7 +29,7 @@ const ExamplesGallery = () => {
       pagination={{ clickable: true }}
       loop={isLoopEnabled}
       modules={[Navigation, Pagination]}
-      className="fuchsia-swiper"
+      className="fuchsia-buttons"
     >
       {sources.map((src, index) => (
         <SwiperSlide key={index}>
