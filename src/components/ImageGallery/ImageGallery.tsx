@@ -11,15 +11,15 @@ import "swiper/css/pagination";
 import "@/styles/ImageGallery.css";
 
 const ImageGallery = () => {
-  const [images, setImages] = useState<string[]>([]);
+  const [sources, setSources] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch("/examples/paths.json")
+    fetch("/examples/sources.json")
       .then((res) => res.json())
-      .then(setImages);
+      .then(setSources);
   }, []);
 
-  const isLoopEnabled = images.length > 1;
+  const isLoopEnabled = sources.length > 1;
 
   return (
     <div className="relative w-full">
@@ -32,7 +32,7 @@ const ImageGallery = () => {
         modules={[Navigation, Pagination]}
         className="fuchsia-swiper"
       >
-        {images.map((src, index) => (
+        {sources.map((src, index) => (
           <SwiperSlide key={index}>
             <Image
               src={src}
