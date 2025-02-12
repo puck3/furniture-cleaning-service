@@ -1,1 +1,1 @@
-export const PHONE_NUMBER = "+79966309098";
+export const PHONE_NUMBER = process.env.NEXT_PUBLIC_PHONE_NUMBER;

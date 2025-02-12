@@ -12,21 +12,11 @@ const submitForm = async (
 ) => {
   console.log("Отправка данных:", formData);
 
-  const formattedMessage = Object.entries(formData)
-    .filter(([_, value]) => value && value.trim() !== "")
-    .map(([key, value]) => `${key}: ${value}`)
-    .join("\n");
-
-  const message = `Услуга: ${serviceTitle}\n${formattedMessage}`;
-
   try {
-    const response = await fetch("https://api.telegram.org/bot/sendMessage", {
+    const response = await fetch("/api/send-form", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: "111111111",
-        text: message,
-      }),
+      body: JSON.stringify({ formData, serviceTitle }),
     });
 
     if (response.ok) {
