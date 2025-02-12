@@ -1,29 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-const faqData = [
-  {
-    question: "Как заказать химчистку мебели?",
-    answer:
-      "Вы можете оставить заявку на сайте, указав свои данные и желаемую услугу. Мы свяжемся с вами для уточнения деталей.",
-  },
-  {
-    question: "Сколько времени занимает химчистка?",
-    answer:
-      "В среднем процесс занимает от 1 до 3 часов в зависимости от степени загрязнения и размера мебели.",
-  },
-  {
-    question: "Какие средства вы используете?",
-    answer:
-      "Мы используем только сертифицированные и безопасные средства, которые не вызывают аллергии и подходят для детей и животных.",
-  },
-  {
-    question: "Как скоро можно пользоваться мебелью после чистки?",
-    answer:
-      "Обычно мебель высыхает в течение 4-6 часов. Мы рекомендуем проветривать помещение для ускорения процесса.",
-  },
-];
+import { faq } from "@/data/faq";
 
 const FAQ = () => {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
@@ -36,7 +14,7 @@ const FAQ = () => {
 
   return (
     <div className="space-y-4">
-      {faqData.map((item, index) => (
+      {faq.map((item, index) => (
         <div key={index} className="border-b border-gray-300">
           <button
             onClick={() => toggleFAQ(index)}
