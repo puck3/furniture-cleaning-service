@@ -14,6 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Fresh Wave: Химчистка мебели",
   description: "Услуги выездной химчистки диванов и мягкой мебели в КМВ",
+  viewport: "width=device-width, height=device-height, initial-scale=1",
 };
 
 export default function RootLayout({

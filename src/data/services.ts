@@ -1,4 +1,4 @@
-export const services = [
+const services = [
   {
     title: "Химчистка диванов",
     cleaning_time: "20-90 мин.",
@@ -64,3 +64,5 @@ export const services = [
     formFields: ["Материал", "Количество автомобилей"],
   },
 ];
+
+export default services;
