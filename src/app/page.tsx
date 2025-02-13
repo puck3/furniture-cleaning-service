@@ -32,13 +32,6 @@ export default function Home() {
         </h2>
         <FAQ />
       </section>
-
-      <section id="contacts" className="my-[2rem] scroll-mt-[5rem]">
-        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
-          Связаться со специалистом
-        </h2>
-        <Contacts />
-      </section>
     </main>
   );
 }
