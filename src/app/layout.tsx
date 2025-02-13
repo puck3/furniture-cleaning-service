@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header/Header";
@@ -14,7 +14,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Fresh Wave: Химчистка мебели",
   description: "Услуги выездной химчистки диванов и мягкой мебели в КМВ",
-  viewport: "width=device-width, height=device-height, initial-scale=1",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  height: "device-height",
+  initialScale: 1,
 };
 
 export default function RootLayout({
