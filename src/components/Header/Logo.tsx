@@ -12,9 +12,9 @@ const Logo = () => {
         height={40}
         className="w-17"
       />
-      <em className="text-white text-2xl font-semibold hidden md:inline">
+      <span className="text-white text-2xl font-bold hidden md:inline">
         Fresh Wave
-      </em>
+      </span>
     </a>
   );
 };
