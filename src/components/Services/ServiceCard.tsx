@@ -16,7 +16,7 @@ const ServiceCard: React.FC<{
   onOpenForm: (service: Service) => void;
 }> = ({ service, onOpenForm }) => {
   return (
-    <div className="border p-[1rem] rounded-lg shadow-md max-w-sm md:max-w-md lg:max-w-lg mx-auto flex flex-col h-full">
+    <div className="flex flex-col h-full border p-5 rounded-lg shadow-md w-[100%]">
       <Image
         src={service.image_src}
         alt={service.title}
@@ -28,7 +28,7 @@ const ServiceCard: React.FC<{
         {service.title}
       </h3>
       <div className="flex-grow"></div>
-      <div className="grid grid-cols-2 gap-4 my-[1rem]">
+      <div className="grid grid-cols-2 gap-4 my-4">
         <div className="flex flex-col items-center bg-gray-200 rounded-lg py-2">
           <Image
             src="/icons/coin.svg"
