@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header/Header";
@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   description: "Услуги выездной химчистки диванов и мягкой мебели в КМВ",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  height: "device-height",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -29,9 +35,7 @@ export default function RootLayout({
         <main className="mt-[6rem] max-w-[95%] sm:max-w-[85%] lg:max-w-[75%] mx-auto">
           {children}
         </main>
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
       </body>
     </html>
   );
