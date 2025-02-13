@@ -4,31 +4,8 @@ import { useState } from "react";
 
 import ServiceCard from "@/components/Services/ServiceCard";
 import ServiceForm from "@/components/Form/ServiceForm";
-import { services } from "@/data/services";
-
-const submitForm = async (
-  formData: Record<string, string>,
-  serviceTitle: string
-) => {
-  console.log("Отправка данных:", formData);
-
-  try {
-    const response = await fetch("/api/send-form", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ formData, serviceTitle }),
-    });
-
-    if (response.ok) {
-      alert("Заявка успешно отправлена!");
-    } else {
-      throw new Error("Ошибка при отправке заявки.");
-    }
-  } catch (error) {
-    alert("Ошибка при отправке заявки.");
-    console.error(error);
-  }
-};
+import services from "@/data/services";
+import submitForm from "@/utils/submitForm";
 
 const ServicesList = () => {
   const [selectedService, setSelectedService] = useState<
