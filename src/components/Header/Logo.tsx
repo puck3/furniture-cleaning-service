@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <Link className="flex items-center space-x-2" href="/#main">
+    <Link className="flex items-center space-x-2" href="/#info">
       <Image
         src="/icons/logo.png"
         alt="На главную"

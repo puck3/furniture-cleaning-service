@@ -2,7 +2,7 @@ import AdvantageCard from "./AdvantageCard";
 
 const ServiceInfo = () => {
   return (
-    <section id="main" className="my-[2rem] scroll-mt-[6rem] text-center">
+    <section id="info" className="my-[2rem] scroll-mt-[6rem] text-center">
       <h1 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
         Профессиональная химчистка мебели
       </h1>
@@ -21,7 +21,7 @@ const ServiceInfo = () => {
           src="/icons/eco-friendly.png"
           alt="Безопасная химия"
           title="Безопасная химия"
-          text="Экологичные средства, безопасные для детей и животных."
+          text="Используем экологичные средства, безопасные для детей и животных."
         />
 
         <AdvantageCard
