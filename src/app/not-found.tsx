@@ -19,7 +19,7 @@ export default function NotFoundPage() {
       </p>
       <Link
         href="/"
-        className="px-6 py-3 text-white bg-fuchsia-600 rounded-lg hover:bg-blue-700 transition"
+        className="px-6 py-3 text-white bg-fuchsia-600 rounded-lg hover:bg-fuchsia-800 transition"
       >
         На главную
       </Link>
