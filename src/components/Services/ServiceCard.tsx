@@ -24,7 +24,7 @@ const ServiceCard: React.FC<{
 
       <section className="flex flex-col mt-auto align-end">
         <div className="grid grid-cols-2 gap-4 my-4">
-          <div className="flex flex-col items-center bg-gray-200 rounded-lg py-2">
+          <div className="flex flex-col items-center bg-gray-100 rounded-lg py-2">
             <Image
               src="/icons/coin.svg"
               alt="coin"
@@ -36,7 +36,7 @@ const ServiceCard: React.FC<{
             <strong className="font-bold">{service.price}</strong>
           </div>
 
-          <div className="flex flex-col items-center bg-gray-200 rounded-lg py-2">
+          <div className="flex flex-col items-center bg-gray-100 rounded-lg py-2">
             <Image
               src="/icons/time.svg"
               alt="clock"
