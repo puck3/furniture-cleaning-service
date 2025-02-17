@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const Logo = () => {
   return (
-    <a className="flex items-center space-x-2" href="#top">
+    <Link className="flex items-center space-x-2" href="/#info">
       <Image
         src="/icons/logo.png"
         alt="На главную"
@@ -15,7 +16,7 @@ const Logo = () => {
       <span className="text-white text-2xl font-bold hidden md:inline">
         Fresh Wave
       </span>
-    </a>
+    </Link>
   );
 };
 
