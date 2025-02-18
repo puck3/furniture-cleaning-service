@@ -12,7 +12,7 @@ const Cart = () => {
       <h2 className="text-xl font-semibold text-center mb-3">Корзина</h2>
       <ul>
         {cart.map((item) => (
-          <CartItem title={item.title} key={item.title} />
+          <CartItem title={item.title} key={"cart item " + item.title} />
         ))}
       </ul>
 

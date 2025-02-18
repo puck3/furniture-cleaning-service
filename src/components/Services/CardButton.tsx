@@ -2,14 +2,22 @@
 
 import useCartStore from "@/store/useCartStore";
 import Service from "@/types/Service";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const CardButton: React.FC<{ service: Service }> = ({ service }) => {
   const isInCart = useCartStore((state) => state.isInCart);
   const addToCart = useCartStore((state) => state.addToCart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const [hydrated, setHydrated] = useState(false);
 
-  return isInCart(service.title) ? (
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  // Пока Zustand не инициализирован — ничего не рендерим
+  // if (!hydrated) return null;
+
+  return hydrated && isInCart(service.title) ? (
     <button
       onClick={() => removeFromCart(service.title)}
       className="w-full bg-gray-200 hover:bg-gray-400 px-4 py-2 rounded-md"
