@@ -27,9 +27,7 @@ const FAQ = () => {
           </button>
           <div
             className={`overflow-hidden transition-all duration-300 ${
-              openIndexes.includes(index)
-                ? "max-h-40 opacity-100"
-                : "max-h-0 opacity-0"
+              openIndexes.includes(index) ? "opacity-100" : "max-h-0 opacity-0"
             }`}
           >
             <p className="text-gray-700 text-base py-2">{item.answer}</p>
