@@ -8,7 +8,10 @@ const Cart = () => {
   const clearCart = useCartStore((state) => state.clearCart);
 
   return (
-    <div className="col-span-full p-5 border rounded-lg shadow-md bg-gray-100">
+    <section
+      id="cart"
+      className="col-span-full p-5 border rounded-lg shadow-md bg-gray-100 scroll-mt-[5rem]"
+    >
       <h2 className="text-xl font-semibold text-center mb-3">Корзина</h2>
       <ul>
         {cart.map((item) => (
@@ -27,7 +30,7 @@ const Cart = () => {
           Оформить заявку
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import CartButton from "@/components/Cart/CartButton";
 import ExamplesGallery from "@/components/ExamplesGallery";
 import FAQ from "@/components/FAQ";
 import ServiceInfo from "@/components/Info/Info";
@@ -17,6 +18,7 @@ export default function Home() {
         </h1>
         <ServicesList />
       </section>
+      <CartButton />
 
       <section id="gallery" className="my-[2rem] scroll-mt-[5rem]">
         <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
