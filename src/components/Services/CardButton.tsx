@@ -14,21 +14,15 @@ const CardButton: React.FC<{ service: Service }> = ({ service }) => {
     setHydrated(true);
   }, []);
 
-  // Пока Zustand не инициализирован — ничего не рендерим
-  // if (!hydrated) return null;
-
   return hydrated && isInCart(service.title) ? (
     <button
       onClick={() => removeFromCart(service.title)}
-      className="w-full bg-gray-200 hover:bg-gray-400 px-4 py-2 rounded-md"
+      className="button-grey"
     >
       Удалить из корзины
     </button>
   ) : (
-    <button
-      onClick={() => addToCart(service)}
-      className="w-full px-4 py-2 rounded-md bg-fuchsia-600 hover:bg-fuchsia-800 text-white"
-    >
+    <button onClick={() => addToCart(service)} className="button">
       Добавить в корзину
     </button>
   );

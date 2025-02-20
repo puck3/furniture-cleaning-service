@@ -16,7 +16,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   text-align: center;
 }
 
@@ -32,6 +33,10 @@ h3 {
   @apply max-w-xl mx-auto space-y-4 text-lg italic text-center;
 }
 
+h4 {
+  @apply text-sm text-gray-600 mt-1;
+}
+
 p {
   @apply text-lg text-gray-600;
 }
@@ -45,5 +50,9 @@ section {
 }
 
 .button {
-  @apply px-6 py-3 my-6 text-white bg-fuchsia-600 rounded-lg hover:bg-fuchsia-800 transition;
+  @apply px-4 py-2 text-white rounded-md bg-fuchsia-600 hover:bg-fuchsia-800 transition;
+}
+
+.button-grey {
+  @apply px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-400 transition;
 }

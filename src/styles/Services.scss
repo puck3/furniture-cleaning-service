@@ -1,0 +1,36 @@
+.service-cards-wrap {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5;
+}
+
+.service-card {
+  @apply flex flex-col h-full border p-5 rounded-lg shadow-md w-full;
+}
+
+.card-header {
+  @apply flex flex-col;
+}
+
+.card-body {
+  @apply flex flex-col mt-auto;
+
+  .button,
+  .button-grey {
+    @apply w-full;
+  }
+}
+
+.card-icons-wrap {
+  @apply grid grid-cols-2 gap-4 mb-[1rem];
+}
+
+.card-image {
+  @apply w-full rounded-t-lg;
+}
+
+.card-content-icon {
+  @apply flex flex-col items-center bg-gray-100 rounded-lg py-2;
+
+  .icon {
+    @apply w-8 h-8;
+  }
+}

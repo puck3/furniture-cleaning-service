@@ -10,12 +10,7 @@ export default function Home() {
   return (
     <main>
       <ServiceInfo />
-
-      {/* TODO: move sections inside components */}
-      <section id="services">
-        <h1>Наши услуги</h1>
-        <ServicesList />
-      </section>
+      <ServicesList />
       <CartButton />
 
       <section id="gallery">
