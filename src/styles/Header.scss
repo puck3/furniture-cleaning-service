@@ -1,0 +1,43 @@
+.header {
+  @apply fixed top-0 left-0 w-full z-20 bg-fuchsia-600 shadow-md p-4;
+}
+
+.header-wrap {
+  @apply w-full flex items-center justify-between;
+}
+
+.lg-nav {
+  @apply hidden lg:flex items-center space-x-8 flex-1 justify-center text-xl font-medium text-white;
+}
+
+.socials-wrap {
+  @apply flex justify-center items-center space-x-0 md:space-x-4;
+}
+
+.phone-semibold {
+  @apply text-white text-2xl lg:text-xl font-semibold;
+}
+
+.socials-icon {
+  @apply w-0 md:w-7;
+}
+
+.sidebar-button {
+  @apply flex lg:hidden p-2 text-white focus:outline-none;
+}
+
+.menu-icon {
+  @apply w-7 h-7;
+}
+
+.logo {
+  @apply flex items-center space-x-2;
+}
+
+.logo-icon {
+  @apply w-12;
+}
+
+.logo-text {
+  @apply text-white text-2xl font-bold hidden md:inline;
+}

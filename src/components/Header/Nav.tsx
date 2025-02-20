@@ -2,12 +2,7 @@
 
 import Link from "next/link";
 
-interface NavProps {
-  className?: string;
-  listClassName?: string;
-  linkClassName?: string;
-  items?: { href: string; label: string }[];
-}
+import NavProps from "@/types/NavProps";
 
 const defaultItems = [
   { href: "/#services", label: "Услуги и цены" },
@@ -18,21 +13,16 @@ const defaultItems = [
 
 const Nav: React.FC<NavProps> = ({
   className = "",
-  listClassName = "",
-  linkClassName = "",
+  textClassName = "",
   items = defaultItems,
 }) => {
   return (
     <nav className={className}>
-      <ul className={listClassName}>
-        {items.map(({ href, label }) => (
-          <li key={href}>
-            <Link href={href} className={linkClassName}>
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {items.map(({ href, label }) => (
+        <Link key={href} href={href} className={textClassName}>
+          {label}
+        </Link>
+      ))}
     </nav>
   );
 };

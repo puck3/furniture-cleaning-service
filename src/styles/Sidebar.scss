@@ -1,0 +1,50 @@
+.sidebar-bg {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease-in-out;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 18rem;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  will-change: transform, opacity;
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+}
+
+.close-button {
+  @apply absolute top-4 right-4 text-gray-600 text-2xl;
+}
+
+.sidebar-nav {
+  @apply mt-16 px-6 p-4 flex flex-col space-y-6;
+}
+
+.sidebar-links {
+  @apply text-2xl text-gray-900 hover:text-fuchsia-600 transition-colors;
+}
