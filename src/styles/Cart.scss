@@ -7,7 +7,7 @@
 }
 
 .cart-item {
-  @apply flex justify-between items-center border-b py-2;
+  @apply flex justify-between items-center border-b border-gray-300 py-2;
 }
 
 .delete-item {
