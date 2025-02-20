@@ -9,7 +9,7 @@ const Cart = () => {
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
 
-  return (
+  return cart.length > 0 ? (
     <section id="cart" className="cart">
       <h1>Корзина</h1>
       <ul>
@@ -25,6 +25,8 @@ const Cart = () => {
         <button className="button">Оформить заявку</button>
       </div>
     </section>
+  ) : (
+    <></>
   );
 };
 
