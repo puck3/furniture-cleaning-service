@@ -1,11 +1,11 @@
 .not-found-page {
-  @apply flex flex-col items-center text-center;
+  @apply flex flex-col items-center text-center h-[90vh];
+
+  .button {
+    @apply my-6;
+  }
 }
 
 .image-404 {
   @apply sm:w-[100%] md:w-[70%] lg:w-[50%] 2xl:w-[30%];
-}
-
-.text {
-  @apply pb-6;
 }
