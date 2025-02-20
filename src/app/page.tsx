@@ -8,29 +8,23 @@ import ServicesList from "@/components/Services/ServicesList";
 
 export default function Home() {
   return (
-    <main className="text-gray-900">
+    <main>
       <ServiceInfo />
 
       {/* TODO: move sections inside components */}
-      <section id="services" className="my-[2rem] scroll-mt-[5rem]">
-        <h1 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
-          Наши услуги
-        </h1>
+      <section id="services">
+        <h1>Наши услуги</h1>
         <ServicesList />
       </section>
       <CartButton />
 
-      <section id="gallery" className="my-[2rem] scroll-mt-[5rem]">
-        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
-          Примеры наших работ
-        </h2>
+      <section id="gallery">
+        <h1>Примеры наших работ</h1>
         <ExamplesGallery />
       </section>
 
-      <section id="questions" className="my-[2rem] scroll-mt-[5rem]">
-        <h2 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
-          Частые вопросы
-        </h2>
+      <section id="questions">
+        <h1>Частые вопросы</h1>
         <FAQ />
       </section>
     </main>

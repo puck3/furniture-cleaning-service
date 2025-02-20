@@ -32,9 +32,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} antialiased`}>
         <Header />
-        <main className="mt-[6rem] max-w-[95%] sm:max-w-[85%] lg:max-w-[75%] mx-auto">
-          {children}
-        </main>
+        {children}
         <Footer />
       </body>
     </html>

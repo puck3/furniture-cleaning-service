@@ -10,7 +10,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
     <div className="flex flex-col h-full border p-5 rounded-lg shadow-md w-full">
       <CardHeader src={service.image_src} title={service.title} />
 
-      <section className="flex flex-col mt-auto align-end">
+      <div className="flex flex-col mt-auto align-end">
         <div className="grid grid-cols-2 gap-4 my-4">
           <CardContentIcon
             src="/icons/coin.svg"
@@ -25,7 +25,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
         </div>
 
         <CardButton service={service} />
-      </section>
+      </div>
     </div>
   );
 };

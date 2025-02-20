@@ -2,11 +2,11 @@ import AdvantageCard from "./AdvantageCard";
 
 const ServiceInfo = () => {
   return (
-    <section id="info" className="my-[2rem] scroll-mt-[6rem] text-center">
-      <h1 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold">
+    <section id="info">
+      <h1 className="my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold text-center">
         Профессиональная химчистка мебели
       </h1>
-      <p className="max-w-xl mx-auto space-y-4 text-lg text-gray-700 italic">
+      <p className="max-w-xl mx-auto space-y-4 text-lg text-gray-700 italic text-center">
         Чистая мебель — залог здоровья и комфорта!
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
