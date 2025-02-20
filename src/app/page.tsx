@@ -15,10 +15,7 @@ export default function Home() {
       <Cart />
       <CartButton />
       <ExamplesGallery />
-      <section id="questions">
-        <h1>Частые вопросы</h1>
-        <FAQ />
-      </section>
+      <FAQ />
     </main>
   );
 }
