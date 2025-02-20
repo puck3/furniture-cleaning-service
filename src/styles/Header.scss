@@ -12,14 +12,14 @@
 
 .socials-wrap {
   @apply flex justify-center items-center space-x-0 md:space-x-4;
-}
 
-.phone-semibold {
-  @apply text-white text-2xl lg:text-xl font-semibold;
-}
+  .phone-semibold {
+    @apply text-white text-2xl lg:text-xl font-semibold;
+  }
 
-.socials-icon {
-  @apply w-0 md:w-7;
+  .socials-icon {
+    @apply w-0 md:w-7;
+  }
 }
 
 .sidebar-button {
