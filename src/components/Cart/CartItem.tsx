@@ -6,12 +6,9 @@ import React from "react";
 const CartItem: React.FC<{ title: string }> = ({ title }) => {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   return (
-    <li className="flex justify-between items-center border-b py-2">
+    <li className="cart-item">
       <span>{title}</span>
-      <button
-        onClick={() => removeFromCart(title)}
-        className="text-red-600 hover:underline"
-      >
+      <button onClick={() => removeFromCart(title)} className="delete-item">
         Удалить
       </button>
     </li>
