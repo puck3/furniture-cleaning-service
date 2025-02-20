@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { faq } from "@/data/faq";
 
+import "@/styles/FAQ.scss";
+
 const FAQ = () => {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
@@ -13,28 +15,26 @@ const FAQ = () => {
   };
 
   return (
-    <div className="space-y-4">
-      {faq.map((item, index) => (
-        <div key={index} className="border-b border-gray-300">
-          <button
-            onClick={() => toggleFAQ(index)}
-            className="w-full flex justify-between items-center py-3 text-left text-lg font-semibold hover:text-fuchsia-600 transition-colors"
-          >
-            {item.question}
-            <span className="text-gray-600 text-xl">
-              {openIndexes.includes(index) ? "−" : "+"}
-            </span>
-          </button>
-          <div
-            className={`overflow-hidden transition-all duration-300 ${
-              openIndexes.includes(index) ? "opacity-100" : "max-h-0 opacity-0"
-            }`}
-          >
-            <p className="text-gray-700 text-base py-2">{item.answer}</p>
+    <section id="questions">
+      <h1>Частые вопросы</h1>
+      <div className="faq-wrap">
+        {faq.map((item, index) => (
+          <div key={index} className="faq-row">
+            <button onClick={() => toggleFAQ(index)} className="question">
+              {item.question}
+              <p>{openIndexes.includes(index) ? "−" : "+"}</p>
+            </button>
+            <div
+              className={`answer ${
+                openIndexes.includes(index) ? "" : "closed"
+              }`}
+            >
+              <p>{item.answer}</p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

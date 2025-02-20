@@ -1,20 +1,20 @@
 "use client";
 
-import useCartStore from "@/store/useCartStore";
 import ServiceCard from "@/components/Services/ServiceCard";
 import services from "@/data/services";
-import Cart from "../Cart/Cart";
+
+import "@/styles/Services.scss";
 
 const ServicesList = () => {
-  const cart = useCartStore((state) => state.cart);
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-      {services.map((service) => (
-        <ServiceCard key={"card " + service.title} service={service} />
-      ))}
-      {cart.length > 0 && <Cart />}
-    </div>
+    <section id="services">
+      <h1>Наши услуги</h1>
+      <div className="service-cards-wrap">
+        {services.map((service) => (
+          <ServiceCard key={"card " + service.title} service={service} />
+        ))}
+      </div>
+    </section>
   );
 };
 

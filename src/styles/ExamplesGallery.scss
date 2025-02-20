@@ -2,7 +2,7 @@
 @use "swiper/css/navigation";
 @use "swiper/css/pagination";
 
-.fuchsia-buttons {
+.gallery-buttons {
   .swiper-button-next,
   .swiper-button-prev {
     color: #c026d3;
@@ -18,4 +18,8 @@
       opacity: 1;
     }
   }
+}
+
+.example-image {
+  @apply w-full rounded-lg;
 }

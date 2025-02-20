@@ -23,21 +23,16 @@ const CartButton = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 group">
-      <button
-        onClick={scrollToCart}
-        className="relative text-white flex items-center justify-center"
-      >
+    <div className="cart-button-wrap">
+      <button onClick={scrollToCart} className="cart-button">
         <Image
           src="/icons/cart.png"
           alt="cart"
           width={128}
           height={128}
-          className="w-16"
+          className="icon"
         />
-        <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-          {cart.length}
-        </span>
+        <span className="indicator">{cart.length}</span>
       </button>
     </div>
   );
