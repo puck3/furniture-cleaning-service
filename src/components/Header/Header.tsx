@@ -10,7 +10,7 @@ import Sidebar from "./Sidebar";
 
 import "@/styles/Header.scss";
 
-const Header: React.FC = () => {
+const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
