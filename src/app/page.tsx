@@ -1,5 +1,6 @@
 "use client";
 
+import Cart from "@/components/Cart/Cart";
 import CartButton from "@/components/Cart/CartButton";
 import ExamplesGallery from "@/components/ExamplesGallery";
 import FAQ from "@/components/FAQ";
@@ -11,13 +12,9 @@ export default function Home() {
     <main>
       <ServiceInfo />
       <ServicesList />
+      <Cart />
       <CartButton />
-
-      <section id="gallery">
-        <h1>Примеры наших работ</h1>
-        <ExamplesGallery />
-      </section>
-
+      <ExamplesGallery />
       <section id="questions">
         <h1>Частые вопросы</h1>
         <FAQ />

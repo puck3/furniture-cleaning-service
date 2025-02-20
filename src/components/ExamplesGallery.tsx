@@ -19,27 +19,30 @@ const ExamplesGallery = () => {
   const isLoopEnabled = sources.length > 1;
 
   return (
-    <Swiper
-      spaceBetween={10}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      loop={isLoopEnabled}
-      modules={[Navigation, Pagination]}
-      className="fuchsia-buttons"
-    >
-      {sources.map((src, index) => (
-        <SwiperSlide key={index}>
-          <Image
-            src={src}
-            alt={`Image ${index + 1}`}
-            className="w-full rounded-lg"
-            width={1920}
-            height={1080}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <section id="gallery">
+      <h1>Примеры наших работ</h1>
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        loop={isLoopEnabled}
+        modules={[Navigation, Pagination]}
+        className="gallery-buttons"
+      >
+        {sources.map((src, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              src={src}
+              alt={`Пример работы номер ${index + 1}`}
+              className="example-image"
+              width={1008}
+              height={756}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
   );
 };
 
