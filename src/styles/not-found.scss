@@ -1,0 +1,7 @@
+.not-found-page {
+  @apply flex flex-col items-center justify-center py-16;
+}
+
+.image-404 {
+  @apply sm:w-[100%] md:w-[70%] lg:w-[50%] 2xl:w-[30%] mb-6;
+}

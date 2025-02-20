@@ -7,8 +7,8 @@ import Header from "@/components/Header/Header";
 import "@/styles/globals.scss";
 
 const inter = Inter({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/icons/favicon.png" />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body>
         <Header />
         {children}
         <Footer />
