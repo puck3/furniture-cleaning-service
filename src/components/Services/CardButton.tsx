@@ -2,19 +2,20 @@
 
 import useCartStore from "@/store/useCartStore";
 import Service from "@/types/Service";
-import React, { useState, useEffect } from "react";
+import { useShallow } from "zustand/shallow";
 
 const CardButton: React.FC<{ service: Service }> = ({ service }) => {
-  const isInCart = useCartStore((state) => state.isInCart);
-  const addToCart = useCartStore((state) => state.addToCart);
-  const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const [hydrated, setHydrated] = useState(false);
+  const { cart, addToCart, removeFromCart } = useCartStore(
+    useShallow((state) => ({
+      cart: state.cart,
+      addToCart: state.addToCart,
+      removeFromCart: state.removeFromCart,
+    }))
+  );
 
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
+  const isInCart = cart.some((item) => item.title === service.title);
 
-  return hydrated && isInCart(service.title) ? (
+  return isInCart ? (
     <button
       onClick={() => removeFromCart(service.title)}
       className="button-grey"
