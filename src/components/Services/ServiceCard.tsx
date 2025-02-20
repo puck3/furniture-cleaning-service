@@ -1,17 +1,27 @@
 "use client";
 
+import Image from "next/image";
+
 import Service from "@/types/Service";
 import CardContentIcon from "./CardContentIcon";
-import CardHeader from "./CardHeader";
 import CardButton from "./CardButton";
 
 const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
   return (
-    <div className="flex flex-col h-full border p-5 rounded-lg shadow-md w-full">
-      <CardHeader src={service.image_src} title={service.title} />
+    <div className="service-card">
+      <header className="card-header">
+        <Image
+          src={service.image_src}
+          alt={service.title}
+          width={300}
+          height={300}
+          className="card-image"
+        />
+        <h2>{service.title}</h2>
+      </header>
 
-      <section className="flex flex-col mt-auto align-end">
-        <div className="grid grid-cols-2 gap-4 my-4">
+      <div className="card-body">
+        <div className="card-icons-wrap">
           <CardContentIcon
             src="/icons/coin.svg"
             title="Стоимость"
@@ -25,7 +35,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
         </div>
 
         <CardButton service={service} />
-      </section>
+      </div>
     </div>
   );
 };

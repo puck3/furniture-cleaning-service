@@ -3,26 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import "@/styles/not-found.scss";
+
 export default function NotFoundPage() {
   return (
-    <div className="flex flex-col items-center justify-center text-center py-16">
+    <main className="not-found-page">
       <Image
         src="/page-not-found.png"
         alt="Страница не найдена"
         width={1024}
         height={1024}
-        className="sm:w-[100%] md:w-[70%] lg:w-[50%] 2  xl:w-[30%] mb-6"
+        className="image-404"
       />
-      <h1 className="text-3xl font-bold mb-4">Страница не найдена</h1>
-      <p className="text-lg text-gray-600 mb-6">
-        Кажется, здесь ничего нет. Но мы можем почистить ваш диван!
-      </p>
-      <Link
-        href="/"
-        className="px-6 py-3 text-white bg-fuchsia-600 rounded-lg hover:bg-fuchsia-800 transition"
-      >
+      <h1>Страница не найдена</h1>
+      <p>Кажется, здесь ничего нет. Но мы можем почистить ваш диван!</p>
+      <Link href="/" className="button">
         На главную
       </Link>
-    </div>
+    </main>
   );
 }

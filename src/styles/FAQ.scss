@@ -1,0 +1,26 @@
+.faq-wrap {
+  @apply flex flex-col gap-y-4;
+}
+
+.faq-row {
+  @apply border-b border-gray-300;
+}
+
+.question {
+  @apply w-full flex justify-between items-center pb-3 text-left text-lg font-semibold hover:text-fuchsia-600 transition-colors;
+}
+
+.answer {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+
+  p {
+    @apply text-base pb-5;
+  }
+
+  &.closed {
+    opacity: 0;
+    max-height: 0;
+  }
+}

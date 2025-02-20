@@ -3,34 +3,30 @@
 import useCartStore from "@/store/useCartStore";
 import CartItem from "./CartItem";
 
+import "@/styles/Cart.scss";
+
 const Cart = () => {
   const cart = useCartStore((state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
 
-  return (
-    <section
-      id="cart"
-      className="col-span-full p-5 border rounded-lg shadow-md bg-gray-100 scroll-mt-[5rem]"
-    >
-      <h2 className="text-xl font-semibold text-center mb-3">Корзина</h2>
+  return cart.length > 0 ? (
+    <section id="cart" className="cart">
+      <h1>Корзина</h1>
       <ul>
         {cart.map((item) => (
           <CartItem title={item.title} key={"cart item " + item.title} />
         ))}
       </ul>
 
-      <div className="flex flex-wrap justify-end gap-2 mt-5">
-        <button
-          onClick={clearCart}
-          className="bg-gray-200 hover:bg-gray-400 px-4 py-2 rounded-md"
-        >
+      <div className="cart-buttons-wrap">
+        <button onClick={clearCart} className="button-grey">
           Очистить корзину
         </button>
-        <button className="px-4 py-2 rounded-md bg-fuchsia-600 hover:bg-fuchsia-800 text-white">
-          Оформить заявку
-        </button>
+        <button className="button">Оформить заявку</button>
       </div>
     </section>
+  ) : (
+    <></>
   );
 };
 

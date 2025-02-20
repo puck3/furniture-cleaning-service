@@ -1,14 +1,14 @@
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 
 import "@/styles/globals.scss";
 
 const inter = Inter({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -30,11 +30,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/icons/favicon.png" />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body>
         <Header />
-        <main className="mt-[6rem] max-w-[95%] sm:max-w-[85%] lg:max-w-[75%] mx-auto">
-          {children}
-        </main>
+        {children}
         <Footer />
       </body>
     </html>

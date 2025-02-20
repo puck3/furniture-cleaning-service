@@ -10,10 +10,49 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  @apply text-gray-900 antialiased;
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
   text-align: center;
+}
+
+h1 {
+  @apply my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold;
+}
+
+h2 {
+  @apply font-semibold text-center text-lg lg:text-xl my-3;
+}
+
+h3 {
+  @apply max-w-xl mx-auto space-y-4 text-lg italic text-center;
+}
+
+h4 {
+  @apply text-sm text-gray-600 mt-1;
+}
+
+p {
+  @apply text-lg text-gray-600;
+}
+
+main {
+  @apply mt-[6rem] max-w-[95%] sm:max-w-[85%] lg:max-w-[75%] mx-auto;
+}
+
+section {
+  @apply sm:my-[2rem] lg:my-[4rem] scroll-mt-[6rem];
+}
+
+.button {
+  @apply px-4 py-2 text-white rounded-md bg-fuchsia-600 hover:bg-fuchsia-800 transition;
+}
+
+.button-grey {
+  @apply px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-400 transition;
 }
