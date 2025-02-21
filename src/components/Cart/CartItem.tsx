@@ -1,6 +1,6 @@
 "use client";
 
-import useCartStore from "@/store/useCartStore";
+import useCartStore from "@/store/CartStore";
 import React from "react";
 
 const CartItem: React.FC<{ title: string }> = ({ title }) => {
