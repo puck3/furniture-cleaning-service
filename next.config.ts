@@ -8,11 +8,8 @@ const nextConfig: NextConfig = {
         hostname: "drive.google.com",
         pathname: "/uc/**",
       },
-      {
-        protocol: "https",
-        hostname: "lh3.googleusercontent.com",
-      },
     ],
+    minimumCacheTTL: 86400,
   },
 };
 

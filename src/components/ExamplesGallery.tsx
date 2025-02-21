@@ -1,20 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { useExampleStore } from "@/store/ExamplesStore";
 
 import "@/styles/ExamplesGallery.scss";
 
 const ExamplesGallery = () => {
-  const [sources, setSources] = useState<string[]>([]);
+  const { sources, setSources, loadSources } = useExampleStore();
 
   useEffect(() => {
-    fetch("/api/examples")
-      .then((res) => res.json())
-      .then(setSources);
-  }, []);
+    loadSources();
+    if (sources.length === 0) {
+      fetch("/api/examples")
+        .then((res) => res.json())
+        .then((data) => {
+          setSources(data);
+        });
+    }
+  }, [sources, setSources, loadSources]);
 
   const isLoopEnabled = sources.length > 1;
 

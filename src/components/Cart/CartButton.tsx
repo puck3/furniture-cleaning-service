@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import useCartStore from "@/store/useCartStore";
+import useCartStore from "@/store/CartStore";
 
 const CartButton = () => {
   const cart = useCartStore((state) => state.cart);

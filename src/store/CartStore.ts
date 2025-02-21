@@ -27,7 +27,7 @@ const useCartStore = create<CartStore>()(
       clearCart: () => set({ cart: [] }),
       isInCart: (title) => get().cart.some((item) => item.title === title),
     }),
-    { name: "cart-storage" } // Название ключа в localStorage
+    { name: "cart-storage" }
   )
 );
 

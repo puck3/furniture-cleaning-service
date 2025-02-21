@@ -1,6 +1,6 @@
 "use client";
 
-import useCartStore from "@/store/useCartStore";
+import useCartStore from "@/store/CartStore";
 import CartItem from "./CartItem";
 
 import "@/styles/Cart.scss";
