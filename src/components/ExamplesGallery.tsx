@@ -11,7 +11,7 @@ const ExamplesGallery = () => {
   const [sources, setSources] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch("/examples/sources.json")
+    fetch("/api/examples")
       .then((res) => res.json())
       .then(setSources);
   }, []);
