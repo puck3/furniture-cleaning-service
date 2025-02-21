@@ -38,7 +38,11 @@ export const GET = async (req: NextRequest) => {
     const auth = getAuth();
     const params = getQueryParams();
     const fileUrls = await fetchUrls(auth, params);
-    return NextResponse.json(fileUrls);
+    return NextResponse.json(fileUrls, {
+      headers: {
+        "Cache-Control": "public, max-age=3600, stale-while-revalidate=3600",
+      },
+    });
   } catch (error) {
     console.error("Ошибка при загрузке файлов:", error);
     return NextResponse.json(
