@@ -31,7 +31,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/icons/favicon.png" />
       </head>
-      <body className={roboto.className}>
+      <body className={roboto.className} id="root">
         <Header />
         {children}
         <Footer />

@@ -26,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-modal": "^3.16.3",
     "autoprefixer": "^10.4.20",
     "globals": "^15.14.0",
     "postcss": "^8.5.3",

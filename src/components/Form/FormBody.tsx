@@ -1,45 +1,18 @@
-"use client";
-
-import React from "react";
-import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import FormButtons from "./FormButtons";
+import { FormProvider, useForm } from "react-hook-form";
+
+import useCartStore from "@/store/CartStore";
+import getFormTemplate from "@/utils/getFormTemplate";
+import getValidationSchema from "@/utils/getValidationSchema";
 import FormField from "./FormField";
-import { isValidPhoneNumber } from "react-phone-number-input";
+import React from "react";
+import FormButtons from "./FormButtons";
 
-interface FieldTemplate {
-  label: string;
-  required: boolean;
-  type: "text" | "tel";
-}
+const FormBody: React.FC<{ closeForm: () => void }> = ({ closeForm }) => {
+  const cart = useCartStore((state) => state.cart);
+  const formTemplate = getFormTemplate(cart);
 
-interface FormProps {
-  formTemplate: FieldTemplate[];
-  onSubmit: (data: Record<string, string>) => void;
-  onClose: () => void;
-}
-
-const FormBody: React.FC<FormProps> = ({ formTemplate, onSubmit, onClose }) => {
-  const formSchema = formTemplate.reduce((schema, field) => {
-    if (field.type === "tel") {
-      schema[field.label] = z
-        .string()
-        .refine(
-          (value) => isValidPhoneNumber(value, "RU"),
-          "Введите корректный номер телефона"
-        );
-    } else if (field.required) {
-      schema[field.label] = z
-        .string()
-        .min(1, `${field.label} - обязательное поле`);
-    } else {
-      schema[field.label] = z.string().optional();
-    }
-    return schema;
-  }, {} as Record<string, z.ZodTypeAny>);
-
-  const validationSchema = z.object(formSchema);
+  const validationSchema = getValidationSchema(formTemplate);
   const formMethods = useForm({
     resolver: zodResolver(validationSchema),
     mode: "all",
@@ -47,17 +20,24 @@ const FormBody: React.FC<FormProps> = ({ formTemplate, onSubmit, onClose }) => {
 
   return (
     <FormProvider {...formMethods}>
-      <form onSubmit={formMethods.handleSubmit(onSubmit)} className="space-y-4">
-        {formTemplate.map(({ label, required, type }) => (
-          <FormField
-            key={label}
-            label={label}
-            required={required}
-            type={type}
-          />
-        ))}
+      <form>
+        {formTemplate.map(({ title, fields }) => {
+          return (
+            <div key={"group " + title} className="space-y-4">
+              <h3>{title}</h3>
+              {fields.map(({ label, required, type }) => (
+                <FormField
+                  key={title + " " + label}
+                  label={label}
+                  required={required}
+                  type={type}
+                />
+              ))}
+            </div>
+          );
+        })}
 
-        <FormButtons onClose={onClose} />
+        <FormButtons onClose={closeForm} />
       </form>
     </FormProvider>
   );
