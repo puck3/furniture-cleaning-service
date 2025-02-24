@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import FormFieldProps from "@/types/FormFieldProps";

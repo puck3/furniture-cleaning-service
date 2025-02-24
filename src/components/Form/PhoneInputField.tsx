@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import PhoneInput from "react-phone-number-input/react-hook-form-input";
 
