@@ -10,20 +10,20 @@ const validateFields = (
 ) => {
   return fields.reduce((schema, field) => {
     if (field.type === "tel") {
-      schema[field.label] = z
+      schema[field.name] = z
         .string()
         .refine(
           (value) => isValidPhoneNumber(value, "RU"),
           "Введите корректный номер телефона"
         );
     } else if (field.type === "checkbox") {
-      schema[field.label] = z.boolean();
+      schema[field.name] = z.boolean();
     } else if (field.type === "text" && field.required) {
-      schema[field.label] = z
+      schema[field.name] = z
         .string()
         .min(1, `${field.label} - обязательное поле`);
     } else {
-      schema[field.label] = z.string().optional();
+      schema[field.name] = z.string().optional();
     }
     return schema;
   }, schema);
