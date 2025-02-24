@@ -1,13 +1,14 @@
 import React from "react";
-import { ControllerRenderProps, FieldValues } from "react-hook-form";
 
-const TextInputField: React.FC<{
-  field: ControllerRenderProps<FieldValues, string>;
-  label: string;
-  className?: string;
-}> = ({ field, label, className = "" }) => {
+import FormFieldProps from "@/types/FormFieldProps";
+
+const TextInputField: React.FC<FormFieldProps> = ({
+  field,
+  label,
+  className = "",
+}) => {
   return (
-    <label className="text-gray-700 block select-none">
+    <label className="label">
       {label}
       <input
         {...field}

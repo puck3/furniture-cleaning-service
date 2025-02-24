@@ -9,19 +9,11 @@ interface Actions {
 
 const FormButtons: React.FC<Actions> = ({ onClose, isDisabled = false }) => {
   return (
-    <div className="flex justify-end space-x-2">
-      <button
-        type="button"
-        onClick={onClose}
-        className="bg-gray-200 hover:bg-gray-400 px-4 py-2 rounded-md"
-      >
+    <div className="form-buttons-wrap">
+      <button type="button" onClick={onClose} className="button-grey">
         Закрыть
       </button>
-      <button
-        type="submit"
-        disabled={isDisabled}
-        className="px-4 py-2 rounded-md bg-fuchsia-600 hover:bg-fuchsia-800 text-white"
-      >
+      <button type="submit" disabled={isDisabled} className="button">
         Отправить
       </button>
     </div>

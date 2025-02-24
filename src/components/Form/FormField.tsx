@@ -1,15 +1,16 @@
 "use client";
 
-import FieldTemplate from "@/types/FieldTemplate";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
+
+import FieldTemplate from "@/types/FieldTemplate";
 import RenderFormField from "./RenderFormField";
 
 const FormField: React.FC<FieldTemplate> = ({
   name,
   label,
-  required = false,
-  type = "text",
+  required,
+  type,
 }) => {
   const { control } = useFormContext();
 
@@ -17,7 +18,7 @@ const FormField: React.FC<FieldTemplate> = ({
     <Controller
       name={name}
       control={control}
-      defaultValue=""
+      defaultValue={type === "checkbox" ? false : ""}
       render={({ field }) => (
         <RenderFormField
           field={field}

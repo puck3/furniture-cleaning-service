@@ -1,19 +1,17 @@
-import {
-  ControllerRenderProps,
-  FieldValues,
-  useFormContext,
-} from "react-hook-form";
+import { useFormContext } from "react-hook-form";
+import React from "react";
+
 import PhoneInputField from "./PhoneInputField";
 import CheckboxField from "./CheckboxField";
 import TextInputField from "./TextInputField";
-import React from "react";
+import RenderFormFieldProps from "@/types/RenderFormFieldProps";
 
-const RenderFormField: React.FC<{
-  field: ControllerRenderProps<FieldValues, string>;
-  label: string;
-  required: boolean;
-  type: "text" | "tel" | "checkbox";
-}> = ({ field, label, required, type }) => {
+const RenderFormField: React.FC<RenderFormFieldProps> = ({
+  field,
+  label,
+  required,
+  type,
+}) => {
   const {
     formState: { errors },
   } = useFormContext();
@@ -26,9 +24,7 @@ const RenderFormField: React.FC<{
         <CheckboxField
           field={field}
           label={label + (required ? "*" : "")}
-          // className={`w-[2rem] h-[2rem] border rounded-md ${
-          //   errorMessage ? "border-red-500" : "border-gray-300"
-          // }`}
+          className="checkbox-field"
         />
       )}
 
@@ -36,9 +32,7 @@ const RenderFormField: React.FC<{
         <PhoneInputField
           field={field}
           label={label + (required ? "*" : "")}
-          className={`w-full border p-2 rounded-md ${
-            errorMessage ? "border-red-500" : "border-gray-300"
-          }`}
+          className={"input-field" + (errorMessage ? " error" : "")}
         />
       )}
 
@@ -46,13 +40,11 @@ const RenderFormField: React.FC<{
         <TextInputField
           field={field}
           label={label + (required ? "*" : "")}
-          className={`w-full border p-2 rounded-md ${
-            errorMessage ? "border-red-500" : "border-gray-300"
-          }`}
+          className={"input-field" + (errorMessage ? " error" : "")}
         />
       )}
 
-      {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 };

@@ -1,14 +1,15 @@
 import React from "react";
-import { ControllerRenderProps, FieldValues } from "react-hook-form";
 import PhoneInput from "react-phone-number-input/react-hook-form-input";
 
-const PhoneInputField: React.FC<{
-  field: ControllerRenderProps<FieldValues, string>;
-  label: string;
-  className?: string;
-}> = ({ field, label, className = "" }) => {
+import FormFieldProps from "@/types/FormFieldProps";
+
+const PhoneInputField: React.FC<FormFieldProps> = ({
+  field,
+  label,
+  className = "",
+}) => {
   return (
-    <label className="text-gray-700 block select-none">
+    <label className="label">
       {label}
       <PhoneInput
         {...field}

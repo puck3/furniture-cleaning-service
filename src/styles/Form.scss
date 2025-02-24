@@ -1,0 +1,63 @@
+.modal {
+  @apply bg-white p-6 rounded-lg shadow-lg w-96 relative max-h-[90vh] overflow-y-auto;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50;
+}
+
+.form-body-wrap {
+  @apply pb-6 space-y-3;
+}
+
+.input-field {
+  @apply w-full border p-2 rounded-md border-gray-300;
+
+  &.error {
+    @apply border-red-500;
+  }
+}
+
+.error-message {
+  @apply text-red-500 text-sm;
+}
+
+.label {
+  @apply text-gray-700 block select-none;
+}
+
+.checkbox-label {
+  @apply text-gray-700 flex items-center select-none cursor-pointer;
+}
+
+.checkbox-input {
+  @apply absolute opacity-0 w-0 h-0;
+}
+
+.checkbox-field {
+  @apply relative flex items-center justify-center w-6 h-6 border rounded-md;
+}
+
+.checkbox-field.checked {
+  @apply bg-blue-500 border-blue-500;
+}
+
+.checkbox-field.unchecked {
+  @apply border-gray-300;
+}
+
+.checkbox-field svg {
+  @apply w-full h-full p-0.5 text-white;
+}
+
+.checkbox-input:focus + .checkbox-field {
+  @apply ring-2 ring-blue-500;
+}
+
+.checkbox-label-text {
+  @apply ml-2;
+}
+
+.form-buttons-wrap {
+  @apply flex justify-end space-x-2;
+}
