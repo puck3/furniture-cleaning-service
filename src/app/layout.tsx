@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 
 import Footer from "@/components/Footer/Footer";
@@ -6,8 +6,9 @@ import Header from "@/components/Header/Header";
 
 import "@/styles/globals.scss";
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -30,7 +31,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/icons/favicon.png" />
       </head>
-      <body>
+      <body className={roboto.className} id="root">
         <Header />
         {children}
         <Footer />

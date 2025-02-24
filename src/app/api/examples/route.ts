@@ -40,7 +40,7 @@ export const GET = async (req: NextRequest) => {
     const fileUrls = await fetchUrls(auth, params);
     return NextResponse.json(fileUrls, {
       headers: {
-        "Cache-Control": "public, max-age=3600, stale-while-revalidate=3600",
+        "Cache-Control": "public, max-age=600, stale-while-revalidate=600",
       },
     });
   } catch (error) {

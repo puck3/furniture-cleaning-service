@@ -1,63 +1,83 @@
 "use client";
 
-import React from "react";
-import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import FormButtons from "./FormButtons";
+import React from "react";
+import {
+  FieldValues,
+  FormProvider,
+  SubmitHandler,
+  useForm,
+} from "react-hook-form";
+
 import FormField from "./FormField";
-import { isValidPhoneNumber } from "react-phone-number-input";
+import FormButtons from "./FormButtons";
+import useCartStore from "@/store/CartStore";
+import getFormTemplate from "@/utils/getFormTemplate";
+import getValidationSchema from "@/utils/getValidationSchema";
+import formatFormData from "@/utils/formatFormData";
+import FormattedFieldValues from "@/types/FormattedFieldValues";
 
-interface FieldTemplate {
-  label: string;
-  required: boolean;
-  type: "text" | "tel";
-}
+const sendToTelegram = async (formData: FormattedFieldValues[]) => {
+  console.log("Отправка данных в API:", JSON.stringify(formData, null, 2));
 
-interface FormProps {
-  formTemplate: FieldTemplate[];
-  onSubmit: (data: Record<string, string>) => void;
-  onClose: () => void;
-}
+  try {
+    const response = await fetch("/api/send-form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ formData }),
+    });
 
-const FormBody: React.FC<FormProps> = ({ formTemplate, onSubmit, onClose }) => {
-  const formSchema = formTemplate.reduce((schema, field) => {
-    if (field.type === "tel") {
-      schema[field.label] = z
-        .string()
-        .refine(
-          (value) => isValidPhoneNumber(value, "RU"),
-          "Введите корректный номер телефона"
-        );
-    } else if (field.required) {
-      schema[field.label] = z
-        .string()
-        .min(1, `${field.label} - обязательное поле`);
-    } else {
-      schema[field.label] = z.string().optional();
-    }
-    return schema;
-  }, {} as Record<string, z.ZodTypeAny>);
+    const result = await response.json();
+    console.log("Ответ API:", result);
+    alert("Заявка успешно оформлена!");
+  } catch (error) {
+    console.error("Error sending data", error);
+    alert("При оформлении заявки произошла ошибка. Попробуйте снова.");
+  }
+};
 
-  const validationSchema = z.object(formSchema);
+const FormBody: React.FC<{ closeForm: () => void }> = ({ closeForm }) => {
+  const cart = useCartStore((state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
+
+  const formTemplate = getFormTemplate(cart);
+
+  const validationSchema = getValidationSchema(formTemplate);
   const formMethods = useForm({
     resolver: zodResolver(validationSchema),
-    mode: "all",
+    mode: "onBlur",
   });
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const formattedData = formatFormData(data, formTemplate);
+    sendToTelegram(formattedData);
+    clearCart();
+    closeForm();
+  };
 
   return (
     <FormProvider {...formMethods}>
-      <form onSubmit={formMethods.handleSubmit(onSubmit)} className="space-y-4">
-        {formTemplate.map(({ label, required, type }) => (
-          <FormField
-            key={label}
-            label={label}
-            required={required}
-            type={type}
-          />
-        ))}
+      <form onSubmit={formMethods.handleSubmit(onSubmit)}>
+        {formTemplate.map(({ title, fields }) => {
+          return (
+            <div key={"group " + title} className="form-body-wrap">
+              {title && <h2>{title}</h2>}
+              {fields.map(({ name, label, required, type }) => (
+                <FormField
+                  key={name}
+                  name={name}
+                  label={label}
+                  required={required}
+                  type={type}
+                />
+              ))}
+            </div>
+          );
+        })}
 
-        <FormButtons onClose={onClose} />
+        <FormButtons onClose={closeForm} />
       </form>
     </FormProvider>
   );

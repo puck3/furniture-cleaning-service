@@ -8,9 +8,7 @@
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
   @apply text-gray-900 antialiased;
 }
 
