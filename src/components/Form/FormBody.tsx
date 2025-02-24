@@ -23,11 +23,12 @@ const FormBody: React.FC<{ closeForm: () => void }> = ({ closeForm }) => {
       <form>
         {formTemplate.map(({ title, fields }) => {
           return (
-            <div key={"group " + title} className="space-y-4">
-              <h3>{title}</h3>
-              {fields.map(({ label, required, type }) => (
+            <div key={"group " + title} className="pb-6 space-y-3">
+              <h2>{title}</h2>
+              {fields.map(({ name, label, required, type }) => (
                 <FormField
-                  key={title + " " + label}
+                  key={name}
+                  name={name}
                   label={label}
                   required={required}
                   type={type}
