@@ -28,6 +28,9 @@ const formatFormData = (
       }
 
       const formattedValue = value === true ? "Да" : value.trim();
+      if (formattedValue === "") {
+        return;
+      }
 
       formattedData[title][label] = formattedValue;
     });
