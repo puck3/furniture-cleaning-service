@@ -43,6 +43,7 @@ const ExamplesGallery = () => {
     autoplay: { delay: 5000, pauseOnMouseEnter: true },
     mousewheel: { forceToAxis: true },
     a11y: { enabled: true },
+    lazyPreloadPrevNext: 1,
     className: "gallery-buttons",
   };
 
@@ -56,10 +57,7 @@ const ExamplesGallery = () => {
         <Swiper {...swiperParams}>
           {sources.map((src, index) => (
             <SwiperSlide key={`Example${index}`}>
-              <ExampleSlide
-                src={src}
-                alt={`Пример работы номер ${index + 1}`}
-              />
+              <ExampleSlide src={src} index={index} />
             </SwiperSlide>
           ))}
         </Swiper>
