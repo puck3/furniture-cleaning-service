@@ -1,32 +1,50 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  A11y,
+  Autoplay,
+  Mousewheel,
+} from "swiper/modules";
+
+import ExampleSlide from "./ExampleSlide";
+import getExamplesSrc from "@/utils/getExamplesSrc";
 
 import "@/styles/ExamplesGallery.scss";
 
 const ExamplesGallery = () => {
-  const [sources, setSources] = useState<string[] | null>(null); // null означает, что загрузка идет
+  const [sources, setSources] = useState<string[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("/api/examples");
-        if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
-        const data = await res.json();
+        const data = await getExamplesSrc();
         setSources(data);
       } catch (error) {
         console.error("Ошибка загрузки изображений:", error);
-        setSources([]); // Чтобы не висело в состоянии загрузки
+        setSources([]);
       }
     };
-
     fetchData();
   }, []);
 
   const isLoopEnabled = sources && sources.length > 1 ? true : false;
+
+  const swiperParams = {
+    modules: [Navigation, Pagination, A11y, Autoplay, Mousewheel],
+    spaceBetween: 10,
+    slidesPerView: 1,
+    navigation: true,
+    pagination: { clickable: true },
+    loop: isLoopEnabled,
+    autoplay: { delay: 5000, pauseOnMouseEnter: true },
+    mousewheel: { forceToAxis: true },
+    a11y: { enabled: true },
+    className: "gallery-buttons",
+  };
 
   return (
     <section id="gallery">
@@ -35,23 +53,12 @@ const ExamplesGallery = () => {
       {sources === null ? (
         <div className="gallery-skeleton"></div>
       ) : sources.length > 0 ? (
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          loop={isLoopEnabled}
-          modules={[Navigation, Pagination]}
-          className="gallery-buttons"
-        >
+        <Swiper {...swiperParams}>
           {sources.map((src, index) => (
-            <SwiperSlide key={index}>
-              <Image
+            <SwiperSlide key={`Example${index}`}>
+              <ExampleSlide
                 src={src}
                 alt={`Пример работы номер ${index + 1}`}
-                className="example-image"
-                width={1008}
-                height={756}
               />
             </SwiperSlide>
           ))}
