@@ -19,8 +19,8 @@ const PhoneInputField: React.FC<FormFieldProps> = ({
         international={true}
         withCountryCallingCode={true}
         className={className}
-        value={field.value || "+7"}
-        onChange={(value: string | undefined) => field.onChange(value || "+7")}
+        value={field.value}
+        onChange={(value: string | undefined) => field.onChange(value || "")}
       />
     </label>
   );
