@@ -1,19 +1,21 @@
 import Image from "next/image";
 import React from "react";
 
-interface ImageProps {
+interface ExampleSlideProps {
   src: string;
-  alt: string;
+  index: number;
 }
 
-const ExampleSlide: React.FC<ImageProps> = ({ src, alt }) => {
+const ExampleSlide: React.FC<ExampleSlideProps> = ({ src, index }) => {
   return (
     <Image
       src={src}
-      alt={alt}
+      alt={`Пример работы номер ${index + 1}`}
       className="example-image"
       width={1008}
       height={756}
+      priority={index === 0}
+      loading={index === 0 ? "eager" : "lazy"}
     />
   );
 };
