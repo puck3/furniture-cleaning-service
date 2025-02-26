@@ -12,6 +12,19 @@ const Form: React.FC<FormProps> = ({ isOpen, closeForm }) => {
   useEffect(() => {
     Modal.setAppElement("#root");
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <Modal
       isOpen={isOpen}
@@ -19,6 +32,7 @@ const Form: React.FC<FormProps> = ({ isOpen, closeForm }) => {
       contentLabel="Форма заявки"
       className="modal"
       overlayClassName="modal-overlay"
+      preventScroll={true}
     >
       <h2>Оформление заявки</h2>
       <FormBody closeForm={closeForm} />
