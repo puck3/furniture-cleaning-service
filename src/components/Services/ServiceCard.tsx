@@ -11,7 +11,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
     <div className="service-card">
       <header className="card-header">
         <Image
-          src={service.image_src}
+          src={service.imageSrc}
           alt={service.title}
           width={300}
           height={300}
@@ -30,7 +30,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
           <CardContentIcon
             src="/icons/time.svg"
             title="Время чистки"
-            text={service.cleaning_time}
+            text={service.cleaningTime}
           />
         </div>
 

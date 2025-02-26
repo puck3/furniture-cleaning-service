@@ -25,19 +25,21 @@ const getFormTemplate = (services: Service[]) => {
     return {
       title: service.title,
       fields: [
-        ...service.formFields.map((formField) => {
+        ...service.formFields.map(({ label, type, extraPrice }) => {
           return {
-            name: service.title + " " + formField,
-            label: formField,
+            name: service.title + " " + label,
+            label: label,
             required: false,
-            type: "text" as const,
+            type: type,
+            extraPrice: extraPrice,
           };
         }),
         {
-          name: service.title + " удаление запахов",
+          name: service.title + " Удаление запахов",
           label: "Удаление запахов",
           required: false,
           type: "checkbox" as const,
+          extraPrice: "от 1000р",
         },
       ],
     };

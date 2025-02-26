@@ -3,6 +3,7 @@ interface FieldTemplate {
   label: string;
   required: boolean;
   type: "text" | "tel" | "checkbox";
+  extraPrice?: string;
 }
 
 export default FieldTemplate;

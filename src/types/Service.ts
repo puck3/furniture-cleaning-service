@@ -1,10 +1,15 @@
+interface Field {
+  label: string;
+  type: "text" | "tel" | "checkbox";
+  extraPrice?: string;
+}
+
 interface Service {
   title: string;
-  cleaning_time: string;
-  drying_time: string;
+  cleaningTime: string;
   price: string;
-  image_src: string;
-  formFields: string[];
+  imageSrc: string;
+  formFields: Field[];
 }
 
 export default Service;

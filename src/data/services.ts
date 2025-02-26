@@ -1,67 +1,110 @@
-const services = [
+import Service from "@/types/Service";
+
+const services: Service[] = [
   {
     title: "Химчистка диванов",
-    cleaning_time: "20-90 мин.",
-    drying_time: "4-8 часов",
+    cleaningTime: "20-90 мин.",
     price: "от 2500р",
-    image_src: "/cards/sofa.png",
-    formFields: ["Материал", "Общее количество посадочных мест"],
+    imageSrc: "/cards/sofa.png",
+    formFields: [
+      { label: "Материал", type: "text" },
+      { label: "Количество посадочных мест", type: "text" },
+    ],
   },
   {
     title: "Химчистка кресел",
-    cleaning_time: "25-45 мин.",
-    drying_time: "3-5 часов",
+    cleaningTime: "25-45 мин.",
     price: "от 1500р",
-    image_src: "/cards/armchair.png",
-    formFields: ["Материал", "Количество кресел"],
+    imageSrc: "/cards/armchair.png",
+    formFields: [
+      { label: "Материал", type: "text" },
+      { label: "Количество кресел", type: "text" },
+    ],
   },
   {
     title: "Химчистка стульев",
-    cleaning_time: "15-35 мин.",
-    drying_time: "1-3 часа",
+    cleaningTime: "15-35 мин.",
     price: "от 600р",
-    image_src: "/cards/chair.png",
-    formFields: ["Материал", "Количество стульев"],
+    imageSrc: "/cards/chair.png",
+    formFields: [
+      { label: "Материал", type: "text" },
+      { label: "Количество стульев", type: "text" },
+    ],
   },
   {
     title: "Химчистка ковров",
-    cleaning_time: "55-90 мин.",
-    drying_time: "3-8 часов",
+    cleaningTime: "55-90 мин.",
     price: "от 200р м2",
-    image_src: "/cards/carpet.png",
-    formFields: ["Материал", "Размер ковра"],
+    imageSrc: "/cards/carpet.png",
+    formFields: [
+      { label: "Материал", type: "text" },
+      { label: "Размер ковра", type: "text" },
+    ],
   },
   {
     title: "Химчистка матрасов",
-    cleaning_time: "45-65 мин.",
-    drying_time: "4-6 часов",
+    cleaningTime: "45-65 мин.",
     price: "от 1500р",
-    image_src: "/cards/mattress.png",
-    formFields: ["Количество матрасов"],
+    imageSrc: "/cards/mattress.png",
+    formFields: [{ label: "Размер матраса", type: "text" }],
   },
   {
     title: "Химчистка подушек и мягких игрушек",
-    cleaning_time: "10-20 мин.",
-    drying_time: "1-2 часа",
+    cleaningTime: "10-20 мин.",
     price: "от 200р",
-    image_src: "/cards/pillow.png",
-    formFields: ["Материал", "Количество"],
+    imageSrc: "/cards/pillow.png",
+    formFields: [
+      { label: "Материал", type: "text" },
+      { label: "Количество", type: "text" },
+    ],
   },
   {
     title: "Химчистка бильярдных столов",
-    cleaning_time: "30-60 мин.",
-    drying_time: "2-4 часов",
+    cleaningTime: "30-60 мин.",
     price: "от 1000р",
-    image_src: "/cards/billiard-table.png",
-    formFields: ["Количество столов"],
+    imageSrc: "/cards/billiard-table.png",
+    formFields: [{ label: "Количество столов", type: "text" }],
   },
   {
     title: "Химчистка автомобилей",
-    cleaning_time: "60-90 мин.",
-    drying_time: "3-5 часов",
+    cleaningTime: "60-90 мин.",
     price: "от 3000р",
-    image_src: "/cards/car.png",
-    formFields: ["Материал", "Количество автомобилей"],
+    imageSrc: "/cards/car.png",
+    formFields: [
+      {
+        label: "Материал",
+        type: "text",
+      },
+      {
+        label: "Марка авто",
+        type: "text",
+      },
+      {
+        label: "Чистка пластика",
+        type: "checkbox",
+        extraPrice: "от 1000р",
+      },
+      {
+        label: "Чистка сидений",
+        type: "checkbox",
+        extraPrice: "от 1000р",
+      },
+      {
+        label: "Чистка потолка",
+        type: "checkbox",
+        extraPrice: "от 1000р",
+      },
+      {
+        label: "Чистка ковриков",
+        type: "checkbox",
+        extraPrice: "от 1000р",
+      },
+      {
+        label: "Чистка багажника",
+        type: "checkbox",
+        extraPrice: "от 1000р",
+      },
+    ],
   },
 ];
 

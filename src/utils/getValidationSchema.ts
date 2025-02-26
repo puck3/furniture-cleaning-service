@@ -12,6 +12,7 @@ const validateFields = (
     if (field.type === "tel") {
       schema[field.name] = z
         .string()
+        .trim()
         .refine(
           (value) => isValidPhoneNumber(value, "RU"),
           "Введите корректный номер телефона"
@@ -21,9 +22,10 @@ const validateFields = (
     } else if (field.type === "text" && field.required) {
       schema[field.name] = z
         .string()
+        .trim()
         .min(1, `${field.label} - обязательное поле`);
     } else {
-      schema[field.name] = z.string().optional();
+      schema[field.name] = z.string().trim().optional();
     }
     return schema;
   }, schema);
