@@ -1,6 +1,9 @@
 @use "swiper/css";
 @use "swiper/css/navigation";
 @use "swiper/css/pagination";
+@use "swiper/css/a11y";
+@use "swiper/css/autoplay";
+@use "swiper/css/mousewheel";
 
 .gallery-buttons {
   .swiper-button-next,
