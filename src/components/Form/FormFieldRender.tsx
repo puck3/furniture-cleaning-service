@@ -6,9 +6,9 @@ import React from "react";
 import PhoneInputField from "./PhoneInputField";
 import CheckboxField from "./CheckboxField";
 import TextInputField from "./TextInputField";
-import RenderFormFieldProps from "@/types/RenderFormFieldProps";
+import FormFieldRenderProps from "@/types/FormFieldRenderProps";
 
-const RenderFormField: React.FC<RenderFormFieldProps> = ({
+const FormFieldRender: React.FC<FormFieldRenderProps> = ({
   field,
   label,
   required,
@@ -51,4 +51,4 @@ const RenderFormField: React.FC<RenderFormFieldProps> = ({
   );
 };
 
-export default RenderFormField;
+export default FormFieldRender;

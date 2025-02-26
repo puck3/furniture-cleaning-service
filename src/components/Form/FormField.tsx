@@ -4,7 +4,7 @@ import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 import FieldTemplate from "@/types/FieldTemplate";
-import RenderFormField from "./RenderFormField";
+import FormFieldRender from "./FormFieldRender";
 
 const FormField: React.FC<FieldTemplate> = ({
   name,
@@ -20,7 +20,7 @@ const FormField: React.FC<FieldTemplate> = ({
       control={control}
       defaultValue={type === "checkbox" ? false : ""}
       render={({ field }) => (
-        <RenderFormField
+        <FormFieldRender
           field={field}
           label={label}
           required={required}

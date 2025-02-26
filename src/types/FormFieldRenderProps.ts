@@ -1,10 +1,10 @@
 import { ControllerRenderProps, FieldValues } from "react-hook-form";
 
-interface RenderFormFieldProps {
+interface FormFieldRenderProps {
   field: ControllerRenderProps<FieldValues, string>;
   label: string;
   required: boolean;
   type: "text" | "tel" | "checkbox";
 }
 
-export default RenderFormFieldProps;
+export default FormFieldRenderProps;
