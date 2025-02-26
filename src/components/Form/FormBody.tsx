@@ -17,10 +17,8 @@ import getValidationSchema from "@/utils/getValidationSchema";
 import sendToTelegram from "@/utils/sendToTelegram";
 
 const FormBody: React.FC<{ closeForm: () => void }> = ({ closeForm }) => {
-  const { cart, clearCart } = useCartStore((state) => ({
-    cart: state.cart,
-    clearCart: state.clearCart,
-  }));
+  const cart = useCartStore((state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
 
   const formTemplate = getFormTemplate(cart);
 
@@ -43,11 +41,11 @@ const FormBody: React.FC<{ closeForm: () => void }> = ({ closeForm }) => {
           return (
             <div key={"group " + title} className="form-body-wrap">
               {title && <h2>{title}</h2>}
-              {fields.map(({ name, label, required, type }) => (
+              {fields.map(({ name, label, required, type, extraPrice }) => (
                 <FormField
                   key={name}
                   name={name}
-                  label={label}
+                  label={extraPrice ? `${label} (${extraPrice})` : label}
                   required={required}
                   type={type}
                 />
@@ -55,6 +53,7 @@ const FormBody: React.FC<{ closeForm: () => void }> = ({ closeForm }) => {
             </div>
           );
         })}
+
         <FormButtons onClose={closeForm} />
       </form>
     </FormProvider>
