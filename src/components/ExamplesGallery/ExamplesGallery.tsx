@@ -49,7 +49,7 @@ const ExamplesGallery = () => {
 
   return (
     <section id="gallery">
-      <h1>Примеры наших работ</h1>
+      <h2>Примеры наших работ</h2>
 
       {sources === null ? (
         <div className="gallery-skeleton"></div>

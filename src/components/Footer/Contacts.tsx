@@ -40,7 +40,7 @@ const Contacts = () => {
         <div className="socials-wrap">
           <SocialsIcon
             src="/icons/socials/telegram_white.svg"
-            alt="Telegram"
+            alt="Telegram channel"
             href="https://t.me/FreshWave26"
             className="socials-icon"
           />

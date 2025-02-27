@@ -20,19 +20,22 @@ h4 {
 }
 
 h1 {
+  @apply scroll-mt-[6rem] my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold;
+}
+h2 {
   @apply my-[1rem] text-xl md:text-2xl lg:text-3xl font-bold;
 }
 
-h2 {
-  @apply font-semibold text-center text-lg lg:text-xl my-3;
-}
-
 h3 {
-  @apply max-w-xl mx-auto space-y-4 text-lg italic text-center;
+  @apply font-semibold text-center text-lg lg:text-xl my-3;
 }
 
 h4 {
   @apply text-sm text-gray-600 mt-1;
+}
+
+.hero-subtitle {
+  @apply max-w-xl mx-auto text-lg italic text-center mb-[-3rem];
 }
 
 p {

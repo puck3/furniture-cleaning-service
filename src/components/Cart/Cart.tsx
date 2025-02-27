@@ -17,7 +17,7 @@ const Cart = () => {
 
   return cart.length > 0 ? (
     <section id="cart" className="cart">
-      <h1>Корзина</h1>
+      <h2>Корзина</h2>
       <ul>
         {cart.map((item) => (
           <CartItem title={item.title} key={"cart item " + item.title} />

@@ -17,7 +17,7 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
           height={300}
           className="card-image"
         />
-        <h2>{service.title}</h2>
+        <h3>{service.title}</h3>
       </header>
 
       <div className="card-body">

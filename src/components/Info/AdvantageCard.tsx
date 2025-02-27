@@ -7,7 +7,7 @@ const AdvantageCard: React.FC<AdvantageCardProps> = ({ src, title, text }) => {
   return (
     <div className="advantage-card">
       <Image src={src} alt={title} width={192} height={192} className="image" />
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{text}</p>
     </div>
   );

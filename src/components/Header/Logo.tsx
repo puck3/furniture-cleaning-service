@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <Link className="logo" href="/#info">
+    <Link className="logo" href="/#main">
       <Image
         src="/icons/logo.png"
         alt="На главную"
@@ -13,7 +13,7 @@ const Logo = () => {
         height={40}
         className="logo-icon"
       />
-      <span className="logo-text">Fresh Wave</span>
+      <span className="logo-text">FreshWave</span>
     </Link>
   );
 };
