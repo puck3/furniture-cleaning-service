@@ -6,7 +6,7 @@ import "@/styles/Info.scss";
 const ServiceInfo = () => {
   return (
     <section>
-      <h2 className="hidden">Наши преимущества</h2>
+      <h2 className="hidden-header">Наши преимущества</h2>
       <div className="advantage-cards-wrap">
         {advantages.map(({ src, title, text }) => (
           <AdvantageCard key={title} src={src} title={title} text={text} />

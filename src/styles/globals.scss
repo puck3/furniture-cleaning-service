@@ -57,3 +57,14 @@ section {
 .button-grey {
   @apply px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-400 transition;
 }
+
+.hidden-header {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
