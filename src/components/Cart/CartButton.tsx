@@ -31,6 +31,8 @@ const CartButton = () => {
           width={128}
           height={128}
           className="icon"
+          priority={true}
+          loading={"eager"}
         />
         <span className="indicator">{cart.length}</span>
       </button>
