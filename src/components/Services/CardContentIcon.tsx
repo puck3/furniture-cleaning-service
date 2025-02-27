@@ -12,7 +12,7 @@ const CardContentIcon: React.FC<CardContentIconProps> = ({
 }) => {
   return (
     <div className="card-content-icon">
-      <Image src={src} alt={title} width={800} height={800} className="icon" />
+      <Image src={src} alt={title} width={32} height={32} className="icon" />
       <h4>{title}</h4>
       <strong>{text}</strong>
     </div>

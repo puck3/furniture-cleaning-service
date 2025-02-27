@@ -40,7 +40,7 @@ const FormBody: React.FC<{ closeForm: () => void }> = ({ closeForm }) => {
         {formTemplate.map(({ title, fields }) => {
           return (
             <div key={"group " + title} className="form-body-wrap">
-              {title && <h2>{title}</h2>}
+              {title && <h3>{title}</h3>}
               {fields.map(({ name, label, required, type, extraPrice }) => (
                 <FormField
                   key={name}

@@ -12,10 +12,11 @@ const ExampleSlide: React.FC<ExampleSlideProps> = ({ src, index }) => {
       src={src}
       alt={`Пример работы номер ${index + 1}`}
       className="example-image"
-      width={1008}
-      height={756}
+      width={1200}
+      height={900}
       priority={index === 0}
       loading={index === 0 ? "eager" : "lazy"}
+      quality={85}
     />
   );
 };

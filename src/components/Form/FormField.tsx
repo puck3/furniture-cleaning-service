@@ -14,11 +14,17 @@ const FormField: React.FC<FieldTemplate> = ({
 }) => {
   const { control } = useFormContext();
 
+  const getDefaultValue = () => {
+    if (type === "checkbox") return false;
+    if (type === "tel") return "+7";
+    return "";
+  };
+
   return (
     <Controller
       name={name}
       control={control}
-      defaultValue={type === "checkbox" ? false : ""}
+      defaultValue={getDefaultValue()}
       render={({ field }) => (
         <FormFieldRender
           field={field}

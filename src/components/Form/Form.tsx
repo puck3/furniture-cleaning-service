@@ -34,7 +34,7 @@ const Form: React.FC<FormProps> = ({ isOpen, closeForm }) => {
       overlayClassName="modal-overlay"
       preventScroll={true}
     >
-      <h2>Оформление заявки</h2>
+      <h3>Оформление заявки</h3>
       <FormBody closeForm={closeForm} />
     </Modal>
   );

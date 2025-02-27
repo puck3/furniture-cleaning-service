@@ -16,7 +16,7 @@ const FAQ = () => {
 
   return (
     <section id="questions">
-      <h1>Частые вопросы</h1>
+      <h2>Частые вопросы</h2>
       <div className="faq-wrap">
         {faq.map((item, index) => (
           <div key={index} className="faq-row">

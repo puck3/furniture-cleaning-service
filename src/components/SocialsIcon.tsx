@@ -16,8 +16,8 @@ const SocialsIcon: React.FC<SocialsIconProps> = ({
   src,
   alt,
   href,
-  width = 30,
-  height = 30,
+  width = 32,
+  height = 32,
   className = "",
 }) => {
   return (

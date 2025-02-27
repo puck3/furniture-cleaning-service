@@ -10,6 +10,10 @@ import ServicesList from "@/components/Services/ServicesList";
 export default function Home() {
   return (
     <main>
+      <h1 id="main">Профессиональная химчистка мебели</h1>
+      <p className="hero-subtitle">
+        Чистая мебель — залог здоровья и комфорта!
+      </p>
       <ServiceInfo />
       <ServicesList />
       <Cart />

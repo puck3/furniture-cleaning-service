@@ -8,7 +8,7 @@ import "@/styles/Services.scss";
 const ServicesList = () => {
   return (
     <section id="services">
-      <h1>Наши услуги</h1>
+      <h2>Наши услуги</h2>
       <div className="service-cards-wrap">
         {services.map((service) => (
           <ServiceCard key={"card " + service.title} service={service} />

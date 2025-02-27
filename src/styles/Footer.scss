@@ -14,7 +14,7 @@ footer {
   @apply flex flex-col items-center mx-auto space-y-1;
 
   h3 {
-    @apply not-italic;
+    @apply max-w-xl mx-auto text-lg lg:text-xl my-0 text-center font-normal;
   }
 
   .text {
