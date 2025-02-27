@@ -13,8 +13,8 @@ const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
         <Image
           src={service.imageSrc}
           alt={service.title}
-          width={300}
-          height={300}
+          width={256}
+          height={256}
           className="card-image"
         />
         <h3>{service.title}</h3>

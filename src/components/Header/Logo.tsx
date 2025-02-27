@@ -9,8 +9,8 @@ const Logo = () => {
       <Image
         src="/icons/logo.png"
         alt="На главную"
-        width={40}
-        height={40}
+        width={48}
+        height={48}
         className="logo-icon"
       />
       <span className="logo-text">FreshWave</span>

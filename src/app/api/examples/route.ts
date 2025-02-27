@@ -30,7 +30,10 @@ const fetchUrls = async (
   const drive = google.drive({ version: "v3", auth });
   const response = await drive.files.list(params);
   const files = response.data.files || [];
-  return files.map((file) => `https://drive.google.com/uc?id=${file.id}`);
+  return files.map(
+    (file) =>
+      `https://drive.google.com/uc?id=${file.id}&export=download&format=webp&width=1200&quality=85`
+  );
 };
 
 export const GET = async (req: NextRequest) => {
