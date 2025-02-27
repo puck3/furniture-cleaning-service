@@ -35,7 +35,7 @@ h4 {
 }
 
 .hero-subtitle {
-  @apply max-w-xl mx-auto text-lg italic text-center mb-[-3rem];
+  @apply max-w-xl mx-auto text-lg italic text-center sm:mb-[-1rem] lg:mb-[-3rem];
 }
 
 p {
