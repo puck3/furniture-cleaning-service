@@ -13,8 +13,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Fresh Wave: Химчистка мебели",
-  description: "Услуги выездной химчистки диванов и мягкой мебели в КМВ",
+  title: "FreshWave — химчистка мебели в КМВ",
+  description:
+    "Сервис FreshWave предоставляет услуги выездной химчистки мягкой мебели, ковров и ковровых покрытий, салонов автомобилей в КМВ",
 };
 
 export const viewport: Viewport = {
