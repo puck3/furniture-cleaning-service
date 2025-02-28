@@ -41,10 +41,6 @@ export const metadata: Metadata = {
     title: "Профессиональная химчистка мебели в Кавминводах",
     description: "Выездная химчистка любой сложности с гарантией результата",
   },
-  // verification: {
-  //   google: "GOOGLE_VERIFICATION_CODE",
-  //   yandex: "YANDEX_VERIFICATION_CODE",
-  // },
 };
 
 export const viewport: Viewport = {
