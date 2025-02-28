@@ -69,24 +69,8 @@ export default function RootLayout({
               "telephone": "+7 (996) 630-90-98",
               "address": {
                 "@type": "PostalAddress",
-                "addressCountry": "Российская Федерация",
                 "addressRegion": "Ставропольский край",
                 "addressLocality": "Кавказские Минеральные Воды"
-              }
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday"
-                ],
-                "opens": "00:00",
-                "closes": "23:59",
-                "description": "Круглосуточно без выходных"
               }
             }
          `}
