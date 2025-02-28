@@ -69,7 +69,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "name": "FreshWave",
               "image": "/web-app-manifest-192x192.png",
-              "priceRange": "₽",
+              "priceRange": "₽₽",
               "telephone": "+7 (996) 630-90-98",
               "address": {
                 "@type": "PostalAddress",
