@@ -13,14 +13,44 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "FreshWave — химчистка мебели в КМВ",
+  title: {
+    default: "FreshWave — профессиональная химчистка мебели в КМВ",
+    template: "%s | FreshWave КМВ",
+  },
   description:
-    "Сервис FreshWave предоставляет услуги выездной химчистки мягкой мебели, ковров и ковровых покрытий, салонов автомобилей в КМВ",
+    "🚚 Выездная химчистка диванов, кресел и автомобильных сидений в Пятигорске и Кавминводах. Гарантия качества ⭐ Эко-средства 💧 Онлайн-запись",
+  keywords: [
+    "химчистка мебели КМВ",
+    "чистка дивана Пятигорск",
+    "химчистка авто Минеральные Воды",
+    "химчистка ковров Ессентуки",
+    "химчистка Железноводск",
+  ],
+  alternates: {
+    canonical:
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      "https://furniture-cleaning-service.vercel.app/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url:
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      "https://furniture-cleaning-service.vercel.app/",
+    siteName: "FreshWave",
+    title: "Профессиональная химчистка мебели в Кавминводах",
+    description: "Выездная химчистка любой сложности с гарантией результата",
+  },
+  // verification: {
+  //   google: "GOOGLE_VERIFICATION_CODE",
+  //   yandex: "YANDEX_VERIFICATION_CODE",
+  // },
 };
 
 export const viewport: Viewport = {
+  themeColor: "#c026d3",
+  colorScheme: "light",
   width: "device-width",
-  height: "device-height",
   initialScale: 1,
 };
 
@@ -30,7 +60,25 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
-        <link rel="icon" type="image/png" href="/icons/favicon.png" />
+        <meta name="apple-mobile-web-app-title" content="FreshWave" />
+
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "FreshWave",
+              "image": "/web-app-manifest-192x192.png",
+              "priceRange": "₽₽",
+              "telephone": "+7 (996) 630-90-98",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Ставропольский край",
+                "addressLocality": "Кавказские Минеральные Воды"
+              }
+            }
+         `}
+        </script>
       </head>
       <body className={roboto.className} id="root">
         <Header />

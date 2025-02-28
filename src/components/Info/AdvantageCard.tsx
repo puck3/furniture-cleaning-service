@@ -12,7 +12,7 @@ const AdvantageCard: React.FC<AdvantageCardProps> = ({ src, title, text }) => {
         width={256}
         height={256}
         className="image"
-        loading="eager"
+        // loading="eager"
       />
       <h3>{title}</h3>
       <p>{text}</p>
