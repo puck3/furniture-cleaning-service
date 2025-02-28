@@ -27,12 +27,16 @@ export const metadata: Metadata = {
     "химчистка Железноводск",
   ],
   alternates: {
-    canonical: "https://freshwave-kmv.online/",
+    canonical:
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      "https://furniture-cleaning-service.vercel.app/",
   },
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: "https://freshwave-kmv.online/",
+    url:
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      "https://furniture-cleaning-service.vercel.app/",
     siteName: "FreshWave",
     title: "Профессиональная химчистка мебели в Кавминводах",
     description: "Выездная химчистка любой сложности с гарантией результата",
