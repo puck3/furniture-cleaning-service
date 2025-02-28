@@ -6,6 +6,10 @@ import Header from "@/components/Header/Header";
 
 import "@/styles/globals.scss";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://furniture-cleaning-service.vercel.app";
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -27,16 +31,12 @@ export const metadata: Metadata = {
     "химчистка Железноводск",
   ],
   alternates: {
-    canonical:
-      process.env.NEXT_PUBLIC_SITE_URL ||
-      "https://furniture-cleaning-service.vercel.app/",
+    canonical: `${siteUrl}/`,
   },
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url:
-      process.env.NEXT_PUBLIC_SITE_URL ||
-      "https://furniture-cleaning-service.vercel.app/",
+    url: `${siteUrl}/`,
     siteName: "FreshWave",
     title: "Профессиональная химчистка мебели в Кавминводах",
     description: "Выездная химчистка любой сложности с гарантией результата",
@@ -64,7 +64,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "FreshWave",
-              "image": "/web-app-manifest-192x192.png",
+              "image": "${siteUrl}/web-app-manifest-192x192.png",
               "priceRange": "₽₽",
               "telephone": "+7 (996) 630-90-98",
               "address": {
