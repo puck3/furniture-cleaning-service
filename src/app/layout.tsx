@@ -41,10 +41,6 @@ export const metadata: Metadata = {
     title: "Профессиональная химчистка мебели в Кавминводах",
     description: "Выездная химчистка любой сложности с гарантией результата",
   },
-  // verification: {
-  //   google: "GOOGLE_VERIFICATION_CODE",
-  //   yandex: "YANDEX_VERIFICATION_CODE",
-  // },
 };
 
 export const viewport: Viewport = {
@@ -69,7 +65,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "name": "FreshWave",
               "image": "/web-app-manifest-192x192.png",
-              "priceRange": "₽",
+              "priceRange": "₽₽",
               "telephone": "+7 (996) 630-90-98",
               "address": {
                 "@type": "PostalAddress",
