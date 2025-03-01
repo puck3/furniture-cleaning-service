@@ -1,54 +1,16 @@
-import { Roboto } from "next/font/google";
-import type { Metadata, Viewport } from "next";
-
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import FONT from "@/config/font";
+import METADATA from "@/config/metadata";
+import SCHEMA from "@/config/schema";
+import VIEWPORT from "@/config/viewport";
 
 import "@/styles/globals.scss";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://furniture-cleaning-service.vercel.app";
+const font = FONT;
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
-
-export const metadata: Metadata = {
-  title: {
-    default: "FreshWave — профессиональная химчистка мебели в КМВ",
-    template: "%s | FreshWave КМВ",
-  },
-  description:
-    "🚚 Выездная химчистка диванов, кресел и автомобильных сидений в Пятигорске и Кавминводах. Гарантия качества ⭐ Эко-средства 💧 Онлайн-запись",
-  keywords: [
-    "химчистка мебели КМВ",
-    "чистка дивана Пятигорск",
-    "химчистка авто Минеральные Воды",
-    "химчистка ковров Ессентуки",
-    "химчистка Железноводск",
-  ],
-  alternates: {
-    canonical: `${siteUrl}/`,
-  },
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-    url: `${siteUrl}/`,
-    siteName: "FreshWave",
-    title: "Профессиональная химчистка мебели в Кавминводах",
-    description: "Выездная химчистка любой сложности с гарантией результата",
-  },
-};
-
-export const viewport: Viewport = {
-  themeColor: "#c026d3",
-  colorScheme: "light",
-  width: "device-width",
-  initialScale: 1,
-};
+export const metadata = METADATA;
+export const viewport = VIEWPORT;
 
 export default function RootLayout({
   children,
@@ -57,26 +19,9 @@ export default function RootLayout({
     <html lang="ru">
       <head>
         <meta name="apple-mobile-web-app-title" content="FreshWave" />
-
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "FreshWave",
-              "image": "${siteUrl}/web-app-manifest-192x192.png",
-              "priceRange": "₽₽",
-              "telephone": "+7 (996) 630-90-98",
-              "address": {
-                "@type": "PostalAddress",
-                "addressRegion": "Ставропольский край",
-                "addressLocality": "Кавказские Минеральные Воды"
-              }
-            }
-         `}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(SCHEMA)}</script>
       </head>
-      <body className={roboto.className} id="root">
+      <body className={font.className} id="root">
         <Header />
         {children}
         <Footer />
