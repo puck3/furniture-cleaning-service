@@ -39,7 +39,7 @@ const getFormTemplate = (services: Service[]) => {
           label: "Удаление запахов",
           required: false,
           type: "checkbox" as const,
-          extraPrice: "от 200р",
+          extraPrice: "от 500р",
         },
       ],
     };
