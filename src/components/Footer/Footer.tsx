@@ -5,7 +5,7 @@ import React from "react";
 import Contacts from "./Contacts";
 
 import "@/styles/Footer.scss";
-import CopyrightNotice from "./CopyrightNotice";
+import Notice from "./Notice";
 
 const Footer: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
       <h2 className="hidden-header">Дополнительная информация</h2>
       <div className="footer-wrap">
         <Contacts />
-        <CopyrightNotice />
+        <Notice />
       </div>
     </footer>
   );
