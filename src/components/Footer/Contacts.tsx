@@ -1,6 +1,11 @@
 "use client";
 
-import { PHONE_NUMBER } from "@/data/constants";
+import {
+  IG_PROGILE,
+  PHONE_NUMBER,
+  TG_CHANNEL,
+  VK_PUBLIC,
+} from "@/data/contacts";
 import PhoneLink from "../PhoneLink";
 import SocialsIcon from "../SocialsIcon";
 
@@ -40,8 +45,20 @@ const Contacts = () => {
         <div className="socials-wrap">
           <SocialsIcon
             src="/icons/socials/telegram_white.svg"
-            alt="Telegram channel"
-            href="https://t.me/FreshWave26"
+            alt="Telegram канал"
+            href={TG_CHANNEL}
+            className="socials-icon"
+          />
+          <SocialsIcon
+            src="/icons/socials/vk_white.svg"
+            alt="Паблик VK"
+            href={VK_PUBLIC}
+            className="socials-icon"
+          />
+          <SocialsIcon
+            src="/icons/socials/instagram_white.svg"
+            alt="Профиль Instagram"
+            href={IG_PROGILE}
             className="socials-icon"
           />
         </div>
