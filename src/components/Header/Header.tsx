@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Nav from "./Nav";
-import { PHONE_NUMBER } from "@/data/constants";
+import { PHONE_NUMBER } from "@/data/contacts";
 import PhoneLink from "../PhoneLink";
 import SocialsIcon from "../SocialsIcon";
 import Logo from "./Logo";

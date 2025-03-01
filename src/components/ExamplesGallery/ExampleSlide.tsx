@@ -16,7 +16,6 @@ const ExampleSlide: React.FC<ExampleSlideProps> = ({ src, index }) => {
       height={1440}
       priority={index === 0}
       loading={index === 0 ? "eager" : "lazy"}
-      quality={85}
     />
   );
 };
