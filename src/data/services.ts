@@ -4,11 +4,15 @@ const services: Service[] = [
   {
     title: "Химчистка диванов",
     cleaningTime: "20-90 мин.",
-    price: "от 2500р",
+    price: "от 1000р",
     imageSrc: "/cards/sofa.png",
     formFields: [
       { label: "Материал", type: "text" },
-      { label: "Количество посадочных мест", type: "text" },
+      {
+        label: "Количество посадочных мест",
+        type: "text",
+        extraPrice: "от 1000р за посадочное место",
+      },
     ],
   },
   {
@@ -34,7 +38,7 @@ const services: Service[] = [
   {
     title: "Химчистка ковров",
     cleaningTime: "55-90 мин.",
-    price: "от 200р м2",
+    price: "от 250р/м2",
     imageSrc: "/cards/carpet.png",
     formFields: [
       { label: "Материал", type: "text" },
@@ -61,14 +65,14 @@ const services: Service[] = [
   {
     title: "Химчистка бильярдных столов",
     cleaningTime: "30-60 мин.",
-    price: "от 1000р",
+    price: "от 2500р",
     imageSrc: "/cards/billiard-table.png",
     formFields: [{ label: "Количество столов", type: "text" }],
   },
   {
     title: "Химчистка автомобилей",
     cleaningTime: "60-90 мин.",
-    price: "от 3000р",
+    price: "от 1500р",
     imageSrc: "/cards/car.png",
     formFields: [
       {
@@ -76,33 +80,48 @@ const services: Service[] = [
         type: "text",
       },
       {
-        label: "Марка авто",
+        label: "Модель и марка авто",
         type: "text",
-      },
-      {
-        label: "Чистка пластика",
-        type: "checkbox",
-        extraPrice: "от 1000р",
       },
       {
         label: "Чистка сидений",
         type: "checkbox",
-        extraPrice: "от 1000р",
+        extraPrice: "от 2000р",
       },
       {
         label: "Чистка потолка",
         type: "checkbox",
-        extraPrice: "от 1000р",
+        extraPrice: "от 1500р",
       },
       {
-        label: "Чистка ковриков",
+        label: "Чистка ковролина",
         type: "checkbox",
-        extraPrice: "от 1000р",
+        extraPrice: "от 1500р",
       },
       {
         label: "Чистка багажника",
         type: "checkbox",
         extraPrice: "от 1000р",
+      },
+      {
+        label: "Чистка пластика",
+        type: "checkbox",
+        extraPrice: "от 500р",
+      },
+      {
+        label: "Чистка ковриков",
+        type: "checkbox",
+        extraPrice: "от 200р",
+      },
+      {
+        label: "Чистка дверных карт",
+        type: "checkbox",
+        extraPrice: "от 200р",
+      },
+      {
+        label: "Чистка подлокотников",
+        type: "checkbox",
+        extraPrice: "от 200р",
       },
     ],
   },
