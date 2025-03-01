@@ -32,7 +32,7 @@ const fetchUrls = async (
   const files = response.data.files || [];
   return files.map(
     (file) =>
-      `https://drive.google.com/uc?id=${file.id}&export=download&format=webp&width=1920&quality=85`
+      `https://drive.google.com/uc?id=${file.id}&export=download&format=webp&width=1920`
   );
 };
 
