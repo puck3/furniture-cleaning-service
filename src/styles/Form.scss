@@ -61,3 +61,7 @@
 .form-buttons-wrap {
   @apply flex justify-end space-x-2;
 }
+
+.policy-link {
+  @apply underline text-blue-600;
+}

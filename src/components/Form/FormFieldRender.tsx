@@ -7,6 +7,7 @@ import PhoneInputField from "./PhoneInputField";
 import CheckboxField from "./CheckboxField";
 import TextInputField from "./TextInputField";
 import FormFieldRenderProps from "@/types/FormFieldRenderProps";
+import PolicyField from "./PolicyField";
 
 const FormFieldRender: React.FC<FormFieldRenderProps> = ({
   field,
@@ -43,6 +44,14 @@ const FormFieldRender: React.FC<FormFieldRenderProps> = ({
           field={field}
           label={label + (required ? "*" : "")}
           className={"input-field" + (errorMessage ? " error" : "")}
+        />
+      )}
+
+      {type === "policy" && (
+        <PolicyField
+          field={field}
+          label=""
+          className={"checkbox-field" + (errorMessage ? " error" : "")}
         />
       )}
 

@@ -24,6 +24,10 @@ const validateFields = (
         .string()
         .trim()
         .min(1, `${field.label} - обязательное поле`);
+    } else if (field.type === "policy") {
+      schema[field.name] = z.literal(true, {
+        errorMap: () => ({ message: "Необходимо согласие (ФЗ РФ)" }),
+      });
     } else {
       schema[field.name] = z.string().trim().optional();
     }

@@ -1,6 +1,6 @@
 interface Field {
   label: string;
-  type: "text" | "tel" | "checkbox";
+  type: "text" | "tel" | "checkbox" | "policy";
   extraPrice?: string;
 }
 

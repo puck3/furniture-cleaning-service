@@ -6,7 +6,7 @@ const SCHEMA = {
   name: "FreshWave",
   description:
     "Выездная химчистка мягкой мебели, автомобилей и ковровых покрытий в КМВ с гарантией результата",
-  image: `${SITE_URL}/web-app-manifest-192x192.png`,
+  image: `${SITE_URL}/favicon.svg`,
   openingHours: "Mo-Su",
   telephone: PHONE_NUMBER,
   priceRange: "₽₽",
