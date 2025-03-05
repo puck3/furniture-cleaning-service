@@ -18,6 +18,12 @@ const getFormTemplate = (services: Service[]) => {
         required: false,
         type: "text",
       },
+      {
+        name: "Согласие на обработку персональных данных",
+        label: "Согласие на обработку персональных данных",
+        required: true,
+        type: "policy",
+      },
     ],
   };
 
