@@ -42,3 +42,6 @@ next-env.d.ts
 
 .vscode
 fresh-wave-examples-f22726ca6035.json
+public/robots.txt
+public/sitemap-0.xml
+public/sitemap.xml
