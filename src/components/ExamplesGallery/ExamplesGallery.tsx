@@ -25,7 +25,6 @@ const ExamplesGallery = () => {
         setSources(data);
       } catch (error) {
         console.error("Ошибка загрузки изображений:", error);
-        setSources([]);
       }
     };
     fetchData();
@@ -44,16 +43,15 @@ const ExamplesGallery = () => {
     mousewheel: { forceToAxis: true },
     a11y: { enabled: true },
     lazyPreloadPrevNext: 1,
-    className: "gallery-buttons",
+    className: "gallery",
   };
 
   return (
     <section id="gallery">
       <h2>Примеры наших работ</h2>
-
       {sources === null ? (
         <div className="gallery-skeleton"></div>
-      ) : sources.length > 0 ? (
+      ) : (
         <Swiper {...swiperParams}>
           {sources.map((src, index) => (
             <SwiperSlide key={`Example${index}`}>
@@ -61,8 +59,6 @@ const ExamplesGallery = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      ) : (
-        <p>Нет доступных изображений</p>
       )}
     </section>
   );
