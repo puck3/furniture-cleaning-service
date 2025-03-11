@@ -1,5 +1,5 @@
 .modal {
-  @apply bg-white p-6 rounded-lg shadow-lg w-96 relative max-h-[90vh] overflow-y-auto;
+  @apply bg-white p-6 rounded-lg shadow-lg w-fit max-w-full relative max-h-full overflow-y-auto;
 }
 
 .modal-overlay {
